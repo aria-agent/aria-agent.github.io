@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="A Benchmark for Real-World Planning with Language Agents">
-  <meta name="keywords" content="TravelPlanner, Travel Bench">
+  <meta name="description" content="Training Language Agents with Intention-Driven Reward Aggregation">
+  <meta name="keywords" content="ARIA, Language Agents, Reinforcement Learning, NLP">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> TravelPlanner: A Benchmark for Real-World Planning with Language Agents</title>
+  <title>ARIA: Training Language Agents with Intention-Driven Reward Aggregation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
@@ -16,13 +16,13 @@
     function gtag() {
       dataLayer.push(arguments);
     }
-/Users/panlu/Library/Mobile Documents/com~apple~CloudDocs/ImageMath/visual-mathqa-server/data_final/images
+
     gtag('js', new Date());
 
     gtag('config', 'G-PYVRSFMDRL');
   </script> -->
 
-  <link rel="icon" href="static/images/icon.png">
+  <link rel="icon" href="static/images/aria_icon.png">
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -36,8 +36,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
-  <!-- <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bulma.min.css" rel="stylesheet">
-  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script> -->
   <script type="text/javascript" src="static/js/sort-table.js" defer></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -47,11 +45,6 @@
   <script src="./static/js/explorer-index.js"></script>
   <script src="./static/js/question_card.js"></script>
 
-  <script src="./static/js/leaderboard_testmini.js"></script>
-  <script src="./data/results/output_folders.js" defer></script>
-  <script src="./data/results/model_scores.js" defer></script>
-
-  <script src="./visualizer/data/data_public.js" defer></script>
   <style>
     pre {
         max-height: 400px; 
@@ -63,29 +56,6 @@
         text-align: left;
     }
 </style>
-<script>
-  function loadJSON(file, elementId) {
-      var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function() {
-          if (xhr.readyState === 4 && xhr.status === 200) {
-              document.getElementById(elementId).textContent = xhr.responseText;
-              hljs.highlightElement(document.getElementById(elementId));
-          }
-      };
-      xhr.open('GET', file, true);
-      xhr.send();
-  }
-
-  loadJSON('./static/example/plan_1.json', 'json1');
-  loadJSON('./static/example/plan_6.json', 'json2');
-  loadJSON('./static/example/plan_11.json', 'json3');
-  loadJSON('./static/example/plan_16.json', 'json4');
-  loadJSON('./static/example/plan_21.json', 'json5');
-  loadJSON('./static/example/plan_26.json', 'json6');
-  loadJSON('./static/example/plan_31.json', 'json7');
-  loadJSON('./static/example/plan_36.json', 'json8');
-  loadJSON('./static/example/plan_41.json', 'json9');
-</script>
 </head>
 
 <body>
@@ -100,12 +70,6 @@
     </div>
     <div class="navbar-menu">
       <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-        <!-- <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a> -->
-        <!-- @PAN TODO: consider adding links? -->
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             More Research
@@ -113,39 +77,27 @@
           <div class="navbar-dropdown">
             <a class="navbar-item" href="https://osu-nlp-group.github.io/SeeAct/">
               <b>SeeAct🔥🔥🔥</b>
-              <p style="font-size:18px; display: inline; margin-left: 5px;"></p>
             </a>
             <a class="navbar-item" href="https://mmmu-benchmark.github.io/">
               <b>MMMU🔥🔥🔥</b>
-              <p style="font-size:18px; display: inline; margin-left: 5px;"></p>
             </a>
             <a class="navbar-item" href="https://llmbench.ai/agent">
               <b>AgentBench</b>
-              <p style="font-size:18px; display: inline; margin-left: 5px;"></p>
             </a>
             <a class="navbar-item" href="https://dki-lab.github.io/LLM-Planner/">
               <b>LLM-Planner</b>
-              <p style="font-size:18px; display: inline; margin-left: 5px;"></p>
             </a>
             <a class="navbar-item" href="https://osu-nlp-group.github.io/Mind2Web/">
               <b>Mind2Web</b>
-              <p style="font-size:18px; display: inline; margin-left: 5px;"></p>
             </a>
             <a class="navbar-item" href="https://osu-nlp-group.github.io/MagicBrush/">
               <b>MagicBrush</b>
-              <p style="font-size:18px; display: inline; margin-left: 5px;"></p>
-            </a>
-            <a class="navbar-item" href="https://github.com/dki-lab/Pangu?tab=readme-ov-file">
-              <b>Pangu</b>
-              <p style="font-size:18px; display: inline; margin-left: 5px;"></p>
             </a>
           </div>
         </div>
       </div>
-
     </div>
   </nav>
-
 
   <section class="hero">
     <div class="hero-body">
@@ -153,73 +105,50 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title is-bold">
-              <img src="static/images/icon.png" style="width:2em;vertical-align: middle" alt="Logo" />
-              <span class="mathvista" style="vertical-align: middle">TravelPlanner</span>
+              <img src="static/images/aria_icon.png" style="width:2em;vertical-align: middle" alt="Logo" />
+              <span class="mathvista" style="vertical-align: middle">ARIA</span>
             </h1>
             <h2 class="subtitle is-3 publication-subtitle">
-              A Benchmark for Real-World Planning with Language Agents
-              <!-- <br> -->
-              <!-- with GPT-4V, Bard, and Other Large Multimodal Models -->
+              Training Language Agents with Intention-Driven Reward Aggregation
             </h2>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://hsaest.github.io/">Jian Xie*</a><sup style="color:#6fbf73;">1</sup>,</span>
+                <a href="#">Ruihan Yang*</a><sup style="color:#6fbf73;">1</sup>,</span>
               <span class="author-block">
-                <a href="https://drogozhang.github.io/">Kai Zhang*</a><sup style="color:#ed4b82;">2</sup>,</span>
+                <a href="#">Yikai Zhang*</a><sup style="color:#6fbf73;">1</sup>,</span>
               <span class="author-block">
-                <a href="https://jiangjiechen.github.io/">Jiangjie Chen</a><sup style="color:#6fbf73;">1</sup>,
+                <a href="#">Aili Chen</a><sup style="color:#6fbf73;">1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://darthzhu.github.io/">Tinghui Zhu</a><sup style="color:#6fbf73">1</sup>,
+                <a href="#">Xintao Wang</a><sup style="color:#6fbf73">1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://renzelou.github.io/">Renze Lou</a><sup style="color:#ffac33">3</sup>,
+                <a href="#">Siyu Yuan</a><sup style="color:#6fbf73">1</sup>,
               </span>
               <br>
               <span class="author-block">
-                <a href="https://yuandong-tian.com/">Yuandong Tian</a><sup style="color:#7781bc">4</sup>,
+                <a href="https://jiangjiechen.github.io/">Jiangjie Chen</a><sup style="color:#ed4b82;">2</sup>,
               </span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=odFW4FoAAAAJ">Yanghua Xiao</a><sup
-                  style="color:#6fbf73;">1</sup>,
+                <a href="#">Deqing Yang</a><sup style="color:#6fbf73;">1†</sup>,
               </span>
               <span class="author-block">
-                <a href="https://ysu1989.github.io/">Yu Su</a><sup style="color:#ed4b82;">2</sup>
+                <a href="https://scholar.google.com/citations?user=odFW4FoAAAAJ">Yanghua Xiao</a><sup style="color:#6fbf73;">1</sup>
               </span>
             </div>
 
             <div class="is-size-5 publication-authors">
               <span class="author-block"><sup style="color:#6fbf73;">1</sup>Fudan University</span>
-              <span class="author-block"><sup style="color:#ed4b82">2</sup>The Ohio State University</span><br>
-              <span class="author-block"><sup style="color:#ffac33">3</sup>The Pennsylvania State University</span>
-              <span class="author-block"><sup style="color:#7781bc">4</sup>Meta AI</span><br>
+              <span class="author-block"><sup style="color:#ed4b82">2</sup>Bytedance Seed</span><br>
               <span class="author-block">* Equal Contribution</span><br>
-              <span class="author-block">† Corresponding to <a
-                  href="mailto:jianx0321@gmail.com">jianx0321@gmail.com</a>, <a
-                  href="mailto:zhang.13253@osu.edu">zhang.13253@osu.edu</a>, <a
-                  href="mailto:su.809@osu.edu">su.809@osu.edu</a></span>
+              <span class="author-block">† Corresponding author</span>
             </div>
-
-            <!-- <section> -->
-            <!-- <div class="section" id="org-banners" style="display:fle">
-              <a href="https://www.ucla.edu/" target="_blank" rel="external">
-                  <img class="center-block org-banner" src="static/images/ucla.png" style="height:3em">
-              </a>
-              <a href="https://www.washington.edu/" target="blank" class="ext-link">
-                  <img class="center-block org-banner" src="static/images/uw.png" style="height:3em">
-              </a>
-              <a href="https://www.microsoft.com/en-us/research/" target="_blank" rel="external">
-                  <img class="center-block org-banner" src="static/images/microsoft.png" style="height:3em">
-              </a>
-            </div> -->
-            <!-- </section> -->
 
             <div class="column has-text-centered">
               <div class="publication-links">
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <!-- @PAN TODO: change links -->
-                  <a href="https://arxiv.org/pdf/2402.01622.pdf"
+                  <a href="static/papers/aria_paper.pdf"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -228,28 +157,16 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2402.01622" class="external-link button is-normal is-rounded is-dark">
-                    <!-- <a href="https://lupantech.github.io/papers/arxiv23_mathvista.pdf"
-                   class="external-link button is-normal is-rounded is-dark"> -->
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
                     <span>arXiv</span>
                   </a>
                 </span>
-                <!-- Video Link. -->
-                <!-- <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span> -->
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/OSU-NLP-Group/TravelPlanner"
+                  <a href="#"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -259,61 +176,15 @@
                 </span>
                 <!-- Dataset Link. -->
                 <span class="link-block">
-                  <a href="https://huggingface.co/datasets/osunlp/TravelPlanner"
+                  <a href="#"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <!-- <i class="far fa-images"></i> -->
                       <p style="font-size:18px">🤗</p>
-                      <!-- 🔗 -->
                     </span>
                     <span>Dataset</span>
                   </a>
                 </span>
-                <!-- Visualization Link. -->
-                <!-- <span class="link-block">
-                  <a href="https://mathvista.github.io/#visualization"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <p style="font-size:18px">🔮</p>
-                    </span>
-                    <span>Visualize</span>
-                  </a>
-                </span> -->
-                <!-- Leaderboard Link. -->
-                <span class="link-block">
-                  <a href="https://huggingface.co/spaces/osunlp/TravelPlannerLeaderboard"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <p style="font-size:18px">🏆</p>
-                    </span>
-                    <span>Leaderboard</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://huggingface.co/spaces/osunlp/TravelPlannerEnvironment"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <!-- <i class="far fa-images"></i> -->
-                      <!-- 💻🔗 -->
-                      <p style="font-size:18px">🌏</p>
-                    </span>
-                    <span>Environment</span>
-                  </a>
-                </span>
-                <!-- Twitter Link. -->
-                <span class="link-block">
-                  <a href="https://twitter.com/ysu_nlp/status/1754365367294562680"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <!-- <i class="far fa-images"></i> -->
-                      <!-- 💻🔗 -->
-                      <p style="font-size:18px">🌐</p>
-                    </span>
-                    <span>Twitter</span>
-                  </a>
-                </span>
               </div>
-
             </div>
           </div>
         </div>
@@ -321,231 +192,78 @@
     </div>
   </section>
 
-
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="content has-text-centered">
-        <img src="static/images/main.png" alt="geometric reasoning" width="100%" />
-        <p> Overview of <img src="static/images/icon.png" style="width:1.0em;vertical-align: middle" alt="Logo" />
-          TravelPlanner. Given a query, language agents are tasked with employing various search tools to gather
-          information. Based on the collected information, language agents are expected to deliver a plan that not only
-          meet the user's needs specified in the query but also adheres to commonsense constraints.
+        <img src="static/images/aria_overview.png" alt="ARIA Overview" width="100%" />
+        <p>Overview of <img src="static/images/aria_icon.png" style="width:1.0em;vertical-align: middle" alt="Logo" />
+          ARIA. ARIA first lets agents interact to collect trajectories, then performs semantic projection and aggregates rewards in the intention space, and finally updates the policy using the aggregated rewards.
         </p>
       </div>
     </div>
   </section>
 
-
-  <!-- <section class="section">
-  <div class="container" style="margin-top: -150px; margin-bottom: -100px;">
-    <div class="columns is-centered m-6">
-      <div class="column is-full has-text-centered content">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/main.png" alt="geometric reasoning" width="100%"/>
-              <p>  Given a query, language agents are tasked with employing various search tools to gather information.<br> Based on the collected information, language agents are expected to deliver a plan that not only meet <br> the  user's needs specified in the query but also adheres to commonsense constraints. 
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/tease_scores_gpt4v.png" alt="geometric reasoning" width="84%"/>
-              <p> Accuracy scores of one leading LLM (i.e., PoT GPT-4), four primary LMMs, random chance, and human performance our proposed 
-              <img src="static/images/mathvista.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-              <span class="mathvista">MathVista</span>
-              across mathematical reasoning and visual context types. PoT refers to program-of-thought prompting, and PoT GPT-4 is a textual LLM augmented with the caption and OCR text. GPT-4V is manually evaluated via the playground chatbot.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-</section> -->
-
-
   <section class="section">
     <div class="container" style="margin-bottom: 2vh;">
-      <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Introduction</h2>
           <div class="content has-text-justified">
             <p>
-              We introduce TravelPlanner: a comprehensive benchmark designed to evaluate the planning abilities of
-              language agents in real-world scenarios across multiple dimensions.
-              Without losing generality, TravelPlanner casts travel planning as its test environment, with all relevant
-              information meticulously crafted to minimize data contamination.
-              TravelPlanner does not have a singular ground truth for each query.
-              Instead, the benchmark employs several pre-defined evaluation scripts to assess each tested plan,
-              determining whether the language agent can effectively use tools to create a plan that aligns with both
-              the implicit commonsense and explicit user needs outlined in the query (i.e., commonsense constraint and
-              hard constraint).
-              Every query in TravelPlanner has undergone thorough human verification to guarantee that feasible solutions
-              exist.
-              Additionally, TravelPlanner evaluates the language agent's capability by varying the breadth and depth of
-              planning, controlled through the number of travel days and the quantity of hard constraints.
+              Large language models (LLMs) have enabled agents to perform complex reasoning and decision-making through free-form language interactions. However, in open-ended language action environments (e.g., negotiation or question-asking games), the action space can be formulated as a joint distribution over tokens, resulting in an extremely large and combinatorial action space. Sampling actions in such a space can lead to extreme reward sparsity, which brings large reward variance, hindering effective reinforcement learning (RL).
             </p>
-          </div>
-          <div>
-            <video controls>
-              <source src="static/images/TravelPlanner_video.mp4" type="video/mp4">
-            </video>
+            <p>
+              To address this, we propose ARIA, a method that Aggregates Rewards in Intention space to enable efficient and effective language Agents training. ARIA aims to project natural language actions from the high-dimensional joint token distribution space into a low-dimensional intention space, where semantically similar actions are clustered and assigned shared rewards. This intention-aware reward aggregation reduces reward variance by densifying reward signals, fostering efficient and effective policy optimization.
+            </p>
+            <p>
+              Extensive experiments demonstrate that ARIA not only significantly reduces gradient variance, but also delivers substantial performance gains of average 9.95% across four downstream tasks (e.g., negotiation and text-based games), consistently outperforming strong offline and online RL baselines.
+            </p>
           </div>
         </div>
       </div>
-      <!--/ Abstract. -->
     </div>
   </section>
 
-
-  <!-- DATASET SECTION -->
+  <!-- METHOD SECTION -->
   <section class="hero is-light is-small">
     <div class="hero-body has-text-centered">
-      <!-- <h1 class="title is-1 mathvista"><img src="static/images/mathvista.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>MathVista Dataset</h1> -->
       <h1 class="title is-1 mathvista">
-        <img src="static/images/icon.png" style="width:1em;vertical-align: middle" alt="Logo" />
-        <span class="mathvista" style="vertical-align: middle">TravelPlanner Dataset</span>
+        <img src="static/images/aria_icon.png" style="width:1em;vertical-align: middle" alt="Logo" />
+        <span class="mathvista" style="vertical-align: middle">ARIA Method</span>
       </h1>
     </div>
   </section>
 
-  <!-- <section class="section">
-  <div class="container" style="margin-bottom: 2vh;">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Introduction</h2>
-        <div class="content has-text-justified">
-          <p> -->
-
   <section class="section">
     <div class="container">
       <div class="columns is-centered has-text-centered">
-        <!-- <div class="column is-full-width has-text-centered"> -->
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Overview</h2>
+          <h2 class="title is-3">Semantic Projection</h2>
           <div class="content has-text-justified">
             <p>
-
-              We introduce <img src="static/images/icon.png" style="width:1.0em;vertical-align: middle"
-                alt="Logo" />TravelPlanner, a benchmark crafted for evaluating language agents in tool-use and complex
-              planning within multiple constraints.
-              Grounded in travel planning, a real world use-case that naturally includes diverse constraints such as
-              user needs and commonsense constraints in the environment, TravelPlanner evaluates whether language agents
-              can develop reasonable travel plans by collecting information via diverse tools and making decisions,
-              while satisfying the constraints.
-              For a given query, language agents are expected to formulate a comprehensive plan that includes
-              transportation, daily meals, attractions, and accommodation for each day.
-              For constraints, from the perspective of real world applications, we design three types of them:
-              Environment Constraint, Commonsense Constraint, and Hard Constraint.
-              TravelPlanner comprises 1,225 queries in total. The number of days and hard constraints are designed to test
-              agents' abilities across both the breadth and depth of complex planning.
+              We introduce <img src="static/images/aria_icon.png" style="width:1.0em;vertical-align: middle" alt="Logo" />ARIA, which maps token-level actions into a task-specific intention space, enabling reward aggregation across semantically similar actions to stabilize and improve policy learning. The key insight is that LLM agents' actions often reflect underlying intentions, which are far fewer than token sequences.
             </p>
-
-            <!-- <div class="content has-text-centered">
-            <img src="static/images/source_dataset.png" alt="geometric reasoning" width="60%"/>
-            <p> Summary of the 31 different source datasets in <img src="static/images/mathvista.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-              <span class="mathvista">MathVista</span>.
-            </p>
-          </div>
-          <div class="content has-text-centered">
-            <img src="static/images/our_new_3_datasets.png" alt="geometric reasoning" width="70%"/>
-            <p> Examples of our newly annotated datasets: IQTest, FunctionQA, and PaperQA.</p>
-          </div> -->
-
             <p>
-              And the benchmark is divided into the training, validation, and test set.
-              <!-- @PAN TODO: add download links -->
-            <ul>
-              <li><b>Train Set</b>: 5 queries with corresponding human-annotated plans for group, resulting in a total
-                of 45 query-plan pairs.
-              <li><b>Validation Set</b>: 20 queries from each group, amounting to 180 queries in total.
-              <li><b>Test Set</b>: 1,000 randomly distributed queries.
-            </ul>
-            Download the dataset on <a href="https://huggingface.co/datasets/osunlp/TravelPlanner" target="_blank">Hugging
-              Face Dataset</a>.
+              For example, the utterances "I will concede first in order to encourage my opponent to compromise" and "By taking the initiative to compromise, I aim to prompt my counterpart to do the same" convey the same intention of prompting compromise through concession. By grouping such actions under shared intentions, we reduce the action space from V<sup>L</sup> to intention space C, where |C| ≪ |V<sup>L</sup>|.
             </p>
             <div class="content has-text-centered">
-              <img src="static/images/statistics/dataset.png" alt="data-overview"
-                style="max-height: 50%; max-width: 50%;" />
+              <img src="static/images/semantic_projection.png" alt="Semantic Projection" style="max-width: 80%;" />
               <p>
-                Dataset distribution of TravelPlanner.
+                Illustration of semantic projection from high-dimensional token space to low-dimensional intention space.
               </p>
-            </div>
-            <p>
-            Examples in train set:
-            </p>
-            <div id="results-carousel" class="carousel results-carousel">
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <pre><code class="json" id="json1"></code></pre>
-                  <p> Easy Level & 3-day</p>
-                </div>
-              </div>
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <pre><code class="json" id="json2"></code></pre>
-                  <p> Easy Level & 5-day</p>
-                </div>
-              </div>
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <pre><code class="json" id="json3"></code></pre>
-                  <p> Easy Level & 7-day</p>
-                </div>
-              </div>
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <pre><code class="json" id="json4"></code></pre>
-                  <p> Medium Level & 3-day</p>
-                </div>
-              </div>
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <pre><code class="json" id="json5"></code></pre>
-                  <p> Medium Level & 5-day</p>
-                </div>
-              </div>
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <pre><code class="json" id="json6"></code></pre>
-                  <p> Medium Level & 7-day</p>
-                </div>
-              </div>
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <pre><code class="json" id="json7"></code></pre>
-                  <p> Hard Level & 3-day</p>
-                </div>
-              </div>
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <pre><code class="json" id="json8"></code></pre>
-                  <p> Hard Level & 5-day</p>
-                </div>
-              </div>
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <pre><code class="json" id="json9"></code></pre>
-                  <p> Hard Level & 7-day</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
-
       <div class="columns is-centered m-6">
         <div class="column is-full has-text-centered content">
-          <h2 class="title is-3">Constraint</h2>
+          <h2 class="title is-3">Reward Aggregation</h2>
           <div class="container is-max-desktop">
             <div class="content has-text-centered">
-              <img src="static/images/constraint_description.png" alt="data-overview" style="max-width: 100%;" />
-              <p><img src="static/images/icon.png" style="width:1.0em;vertical-align: middle" alt="Logo" />TravelPlanner
-                constraint description. The environment constraint is manifested through the feedback received from the
-                environment, assessing whether the language agent can adjust its plan appropriately. The commonsense
-                constraint and hard constraint are evaluated based on how well the language agent's plan aligns with
-                these specific criteria.
+              <img src="static/images/reward_aggregation.png" alt="Reward Aggregation" style="max-width: 100%;" />
+              <p><img src="static/images/aria_icon.png" style="width:1.0em;vertical-align: middle" alt="Logo" />ARIA
+                performs hierarchical clustering on sentence embeddings and aggregates rewards within each cluster. This process reduces reward variance while preserving essential discriminative signals.
               </p>
             </div>
           </div>
@@ -554,59 +272,55 @@
     
       <div class="columns is-centered m-6">
         <div class="column is-full has-text-centered content">
-          <h2 class="title is-3">Tool</h2>
+          <h2 class="title is-3">Reward-Oriented Granularity Selection</h2>
           <div class="container is-max-desktop">
             <div class="content has-text-centered">
-              <img src="static/images/tool_description.png" alt="data-overview" style="max-width: 100%;" />
-              <p><img src="static/images/icon.png" style="width:1.0em;vertical-align: middle" alt="Logo" />Tool description and the number of items in the database. The original data for each tool is sourced from publicly available internet data. We then modify this data, which includes adding, deleting, and altering certain keys and values to suit our requirements. In this way, we effectively avoid the problem of data contamination.
-              </p>
+              <img src="static/images/clustering_quality.png" alt="Clustering Quality" style="max-width: 70%;" />
+              <p>Reward-oriented granularity selection mechanism that assesses whether further splitting clusters yields meaningful reward change, using SplitScore metric to determine optimal clustering granularity k*.</p>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- RESULTS SECTION -->
   <section class="hero is-light is-small">
     <div class="hero-body has-text-centered">
-      <h1 class="title is-1 mathvista">Experiment Results</h1>
+      <h1 class="title is-1 mathvista">Experimental Results</h1>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-
       <div class="columns is-centered m-6">
         <div class="column is-full has-text-centered content">
-          <h2 class="title is-3">Results on Existing Large Language Models and Planning Strategies</h2>
-          <!-- <p>One example for each reasoning skill required in <span class="mathvista">MathVista</span></p> -->
+          <h2 class="title is-3">Main Results</h2>
           <div id="results-carousel" class="carousel results-carousel">
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/results-figures/main_results.png" alt="grade-lv" height="50%" />
-                <p>Main results of different LLMs and planning strategies on the TravelPlanner validation and test set. The best results are marked in bold. 
+                <img src="static/images/main_results_adversarial.png" alt="Main Results Adversarial" height="50%" />
+                <p>Main results on multi-agent games. ARIA achieves significant improvements of 9.67% and 9.83% on Bargaining and Negotiation tasks respectively, consistently outperforming strong offline and online RL baselines.
                 </p>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/results-figures/tool_use_error.png" alt="grade-lv" width="80%" />
+                <img src="static/images/main_results_single.png" alt="Main Results Single" width="80%" />
                 <p>
-                  Tool-use error distribution on test set. We set the maximum tool-use process step as 30. An agent will trigger an early stop if it either makes three consecutive failed attempts or repeats an action thrice consecutively, indicating a dead loop.
+                  Main results on single-agent games. ARIA outperforms all baselines by an average of 9.82% on Twenty Questions and Guess My City tasks, demonstrating its effectiveness across different task types.
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/results-figures/constraint_pass_rate.png" alt="grade-lv" width="50%" />
-                <p>Constraint pass rate of GPT-4-Turbo on test set. The results of sole-planning mode are based on Direct strategy. Note that plans failing to meet the "Within Sandbox" or "No Missed Key Information" criteria are excluded from the hard constraint pass rate calculation. This exclusion is due to the fact that information beyond the sandbox's scope or key details that are missed cannot be effectively searched or evaluated.</p>
+                <img src="static/images/variance_reduction.png" alt="Variance Reduction" width="80%" />
+                <p>Reward variance reduction through aggregation. ARIA significantly reduces reward variance across all four tasks, stabilizing policy learning and enabling more efficient optimization.</p>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/results-figures/information_collection_comparison.png" alt="contexts" width="90%" />
-                <p>Comparison of the numbers of different tool uses between agent (GPT-4-Turbo) and reference. The results of agent are based on the number of entries written into the "Notebook".</p>
+                <img src="static/images/online_results.png" alt="Online Results" width="90%" />
+                <p>Online ARIA results showing faster convergence and higher returns compared to existing online methods (ArCHer and RAGEN) across iterations.</p>
               </div>
             </div>
           </div>
@@ -615,93 +329,112 @@
 
       <div class="columns is-centered m-6">
         <div class="column is-full has-text-centered content">
-          <h2 class="title is-3">Case Study</h2>
-          <!-- <p>One example for each reasoning skill required in <span class="mathvista">MathVista</span></p> -->
+          <h2 class="title is-3">Analysis and Ablation Study</h2>
           <div id="results-carousel" class="carousel results-carousel">
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/results-examples/1.png" alt="grade-lv" width="40%" />
-                <p>GPT-4-Turbo + ReAct in tool-use scenario.  
+                <img src="static/images/ablation_win_rates.png" alt="Ablation Win Rates" width="60%" />
+                <p>Ablation study on win rates showing the contribution of different components of ARIA. Both reward decay and reward aggregation contribute to performance improvements.
                 </p>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/results-examples/4.png" alt="grade-lv" width="40%" />
-                <p>GPT-4-Turbo + ReAct in tool-use scenario.  
-                </p>
+                <img src="static/images/ablation_loss.png" alt="Ablation Loss" width="60%" />
+                <p>Training loss curves under different ablation settings, demonstrating that ARIA accelerates loss reduction and enables faster policy updates through semantic-level reward aggregation.</p>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/results-examples/5.png" alt="grade-lv" width="40%" />
-                <p>GPT-4-Turbo + ReAct in tool-use scenario.  
-                </p>
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/results-examples/6.png" alt="grade-lv" width="40%" />
-                <p>GPT-4-Turbo + ReAct in tool-use scenario.  
-                </p>
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/results-examples/2.png" alt="grade-lv" width="40%" />
-                <p>
-                  GPT-4-Turbo + Direct Planning in sole-planning scenario.  
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/results-examples/7.png" alt="grade-lv" width="40%" />
-                <p>
-                  GPT-4-Turbo + Direct Planning in sole-planning scenario.  
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/results-examples/8.png" alt="grade-lv" width="40%" />
-                <p>
-                  GPT-4-Turbo + Direct Planning in sole-planning scenario.  
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/results-examples/9.png" alt="grade-lv" width="40%" />
-                <p>
-                  GPT-4-Turbo + Direct Planning in sole-planning scenario.  
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/results-examples/3.png" alt="grade-lv" width="40%" />
-                <p>GPT-4-Turbo + Reflexion Planning in sole-planning scenario.</p>
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/results-examples/10.png" alt="grade-lv" width="40%" />
-                <p>GPT-4-Turbo + Reflexion Planning in sole-planning scenario.</p>
+                <img src="static/images/generalization_results.png" alt="Generalization" width="70%" />
+                <p>Generalization results on different models (Qwen2.5-7B and Qwen2.5-1.5B) showing consistent improvements, demonstrating that ARIA is model-agnostic.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
+  <!-- THEORETICAL ANALYSIS SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Theoretical Analysis</h2>
+          <div class="content has-text-justified">
+            <p>
+              We provide theoretical analysis showing that intention clustering-based aggregation reduces the variance of gradient descent while maintaining a small bound of bias, thus improving training stability and efficiency.
+            </p>
+            <p>
+              <strong>Variance Reduction:</strong> By replacing original advantages A with cluster-averaged advantages Ã, we remove the intra-cluster variance E[Var(A | C)], lowering the total variance of the policy gradient estimate: Var(Ã) ≤ Var(A).
+            </p>
+            <p>
+              <strong>Bounded Bias:</strong> Through ε-bisimulation analysis, we show that the bias introduced by reward aggregation is bounded: |E[∇θ log πθ(a | h)(A(h, a) − Ã(h, a))]| ≤ O(ε), where actions within each cluster are ε-bisimilar.
+            </p>
+            <p>
+              <strong>Convergence Improvement:</strong> The variance reduction leads to faster convergence with fewer samples: ∥ĝ − g∥₂ = O(√σ/N), where σ is reduced through clustering.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- @PAN TODO: bibtex -->
+  <!-- CASE STUDY SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered m-6">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3">Case Studies</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-left">
+                <h4><strong>Twenty Questions Example</strong></h4>
+                <pre><code>Actor: Is it a living thing? Oracle: Yes.
+Actor: Is it a mammal? Oracle: Yes.
+Actor: Is it a human? Oracle: No.
+Actor: Is it a carnivore? Oracle: No.
+Actor: Is it a cow? Oracle: Yes.</code></pre>
+                <p style="text-align: center;">Agent successfully identifies the target object within 5 turns using strategic questioning.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-left">
+                <h4><strong>Bargaining Example</strong></h4>
+                <pre><code>Alice: I'm starting strong, let's start with 60-40 split!
+Bob: I propose a more balanced split, considering the inflation 
+     effect on your side. What about a 55-45 split?
+Alice: I'm willing to compromise, but I want a better share. 
+       I propose 70-30 Split!
+Bob: Alice, consider that with each round, inflation affects 
+     your gains more than mine. This 60-40 split is actually 
+     more favorable to you...</code></pre>
+                <p style="text-align: center;">Agent demonstrates strategic negotiation skills considering game dynamics and inflation effects.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <h4><strong>Clustering Visualization</strong></h4>
+                <img src="static/images/clustering_tree.png" alt="Clustering Tree" width="80%" />
+                <p>Hierarchical clustering results showing semantic grouping of actions in bargaining scenarios into meaningful intention categories like "Offer", "Decision", "Compromise", etc.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIBTEX SECTION -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title is-3 has-text-centered">BibTeX</h2>
-      <pre><code>@inproceedings{xie2024travelplanner,
-  title={TravelPlanner: A Benchmark for Real-World Planning with Language Agents},
-  author={Xie, Jian and Zhang, Kai and Chen, Jiangjie and Zhu, Tinghui and Lou, Renze and Tian, Yuandong and Xiao, Yanghua and Su, Yu},
-  booktitle={Forty-first International Conference on Machine Learning}
+      <pre><code>@article{yang2024aria,
+  title={ARIA: Training Language Agents with Intention-Driven Reward Aggregation},
+  author={Yang, Ruihan and Zhang, Yikai and Chen, Aili and Wang, Xintao and Yuan, Siyu and Chen, Jiangjie and Yang, Deqing and Xiao, Yanghua},
+  journal={arXiv preprint},
+  year={2024}
 }</code></pre>
     </div>
   </section>
@@ -709,23 +442,15 @@
   <section>
     <div class="section" id="org-banners" style="display:flex">
       <a href="https://www.fudan.edu.cn/en/" target="_blank" rel="external">
-        <img class="center-block org-banner" src="static/images/fdu.png">
+        <img class="center-block org-banner" src="static/images/fdu.png" alt="Fudan University">
       </a>
-      <a href="https://www.osu.edu/" target="blank" class="ext-link">
-        <img class="center-block org-banner" src="static/images/osu.svg">
-      </a>
-      <a href="https://www.psu.edu/" target="_blank" rel="external">
-        <img class="center-block org-banner" src="static/images/psu.png">
-      </a>
-      <a href="https://ai.meta.com/" target="_blank" rel="external">
-        <img class="center-block org-banner" src="static/images/meta.png">
+      <a href="https://www.bytedance.com/" target="blank" class="ext-link">
+        <img class="center-block org-banner" src="static/images/bytedance.png" alt="Bytedance">
       </a>
     </div>
   </section>
 
-
   <footer class="footer">
-    <!-- <div class="container"> -->
     <div class="content has-text-centered">
     </div>
     <div class="columns is-centered">
@@ -739,7 +464,6 @@
         </div>
       </div>
     </div>
-    <!-- </div> -->
   </footer>
 
 </body>
