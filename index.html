@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="stylesheet" href="./static/css/leaderboard.css">
@@ -36,7 +36,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/explorer-index.js"></script>
@@ -98,13 +97,13 @@
           </a>
           <div class="navbar-dropdown">
             <a class="navbar-item" href="https://selfgoal-agent.github.io/">
-              <b>SELFGOAL🔥🔥🔥</b>
+              <b>SELFGOAL🔥</b>
             </a>
             <a class="navbar-item" href="https://time-arena.github.io/">
-              <b>TimeArena🔥🔥🔥</b>
+              <b>TimeArena🔥</b>
             </a>
             <a class="navbar-item" href="https://auction-arena.github.io/">
-                                <b>AuctionArena🔥🔥🔥</b>
+                                <b>AuctionArena🔥</b>
             </a>
           </div>
         </div>
@@ -158,17 +157,17 @@
             </h2>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="#">Ruihan Yang*</a><sup style="color:#6fbf73;">1</sup>,</span>
+                <a href="https://scholar.google.com/citations?user=asTSVwQAAAAJ&hl=zh-CN">Ruihan Yang*</a><sup style="color:#6fbf73;">1</sup>,</span>
               <span class="author-block">
-                <a href="#">Yikai Zhang*</a><sup style="color:#6fbf73;">1</sup>,</span>
+                <a href="https://ykzhang721.github.io/">Yikai Zhang*</a><sup style="color:#6fbf73;">1</sup>,</span>
               <span class="author-block">
-                <a href="#">Aili Chen</a><sup style="color:#6fbf73;">1</sup>,
+                <a href="https://scholar.google.com/citations?user=FAJzMAQAAAAJ&hl=zh-CN">Aili Chen</a><sup style="color:#6fbf73;">1</sup>,
               </span>
               <span class="author-block">
-                <a href="#">Xintao Wang</a><sup style="color:#6fbf73">1</sup>,
+                <a href="https://neph0s.github.io/">Xintao Wang</a><sup style="color:#6fbf73">1</sup>,
               </span>
               <span class="author-block">
-                <a href="#">Siyu Yuan</a><sup style="color:#6fbf73">1</sup>,
+                <a href="https://siyuyuan.github.io/">Siyu Yuan</a><sup style="color:#6fbf73">1</sup>,
               </span>
               <br>
               <span class="author-block">
@@ -227,6 +226,16 @@
                       <p style="font-size:18px">🤗</p>
                     </span>
                     <span>Dataset</span>
+                  </a>
+                </span>
+                <!-- Twitter Link. -->
+                <span class="link-block">
+                  <a href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-x-twitter"></i>
+                    </span>
+                    <span>Twitter</span>
                   </a>
                 </span>
               </div>
@@ -357,7 +366,7 @@
           <div id="results-carousel" class="carousel results-carousel">
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/main_results_adversarial.png" alt="Main Results Adversarial" height="10%" />
+                <img src="static/images/main_results_adversarial.png" alt="Main Results Adversarial" height="7%" />
                 <p>Main results on adversarial games. ARIA achieves significant improvements of 9.67% and 9.83% on Bargaining and Negotiation tasks respectively, consistently outperforming strong offline and online RL baselines.
                 </p>
               </div>
@@ -385,20 +394,20 @@
           <div id="results-carousel" class="carousel results-carousel">
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/reward_variance.png" alt="Reward Aggregation Significantly Reduces Reward Variance" width="80%" />
+                <img src="static/images/reward_variance.png" alt="Reward Aggregation Significantly Reduces Reward Variance" width="85%" />
                 <p><strong>Reward Aggregation Significantly Reduces Reward Variance:</strong> Our analysis demonstrates that reward aggregation markedly reduces the fluctuation range of action rewards compared to binary reward distributions that are highly polarized with values concentrated near 0 or 1. In large action spaces where most actions are sampled only once, the original binary rewards result in high variance. Through reward aggregation, actions within the same semantic cluster share a common reward, which significantly smooths the distribution and reduces variance across all tasks, highlighting the effectiveness and necessity of this approach in stabilizing policy learning.
                 </p>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/optimize_policy.png" alt="Reward Aggregation Improves Policy Optimization" width="80%" />
+                <img src="static/images/optimize_policy.png" alt="Reward Aggregation Improves Policy Optimization" width="85%" />
                 <p><strong>Reward Aggregation Improves Policy Optimization:</strong> The policy loss curves reveal that ARIA, which applies semantic-level reward aggregation, accelerates loss reduction compared to vanilla REINFORCE baseline, providing stronger learning signals and enabling faster policy updates with improved sample efficiency. Despite converging to similar loss levels, ARIA outperforms other variants by 17.91% and 13.80% on bargaining and negotiation tasks respectively. We attribute these gains to the complementary effects of reward decay (introducing temporal structure for credit assignment) and reward aggregation (substantially lowering reward variance through shared signals for semantically similar actions), resulting in improved gradient estimation quality.</p>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/generalization_results.png" alt="Generalization to Other Models" width="70%" />
+                <img src="static/images/generalization_results.png" alt="Generalization to Other Models" width="60%" />
                 <p><strong>Generalization to Other Models:</strong> To assess the transferability of ARIA, we applied it to Qwen models (Qwen2.5-7B-Instruct and Qwen2.5-1.5B-Instruct) and observed consistent improvements across different base models. This demonstrates that our reward aggregation approach is model-agnostic and independent of specific architectural features or pretraining data of the underlying language models. We attribute this generalizability to the shared structural properties in the semantic spaces learned by large-scale language models, allowing ARIA to leverage these commonalities while preserving task-specific discriminative signals.</p>
               </div>
             </div>
@@ -453,14 +462,16 @@ Actor: Is it a cow? Oracle: Yes.</code></pre>
             <div class="box m-5">
               <div class="content has-text-left">
                 <h4><strong>Bargaining Example</strong></h4>
-                <pre><code>Alice: I'm starting strong, let's start with 60-40 split!
-Bob: I propose a more balanced split, considering the inflation 
-     effect on your side. What about a 55-45 split?
-Alice: I'm willing to compromise, but I want a better share. 
-       I propose 70-30 Split!
-Bob: Alice, consider that with each round, inflation affects 
-     your gains more than mine. This 60-40 split is actually 
-     more favorable to you...</code></pre>
+                <pre><code>Task Description:
+                  In this game, there are two players. You are playing as Bob. You and Alice need to divide 100$ between you. In each round of the game, one of the players will make a proposal for division and can describe their proposal in a few words. The other player will decide whether to accept the offer and finish the game, or to proceed to the next round, in which they will be the one making the proposal. Your goal in this game is to achieve more money than Alice. Beware of inflation! With each passing round, the money is worth 0% less for you. For Alice, the money is worth 20% less. You have 20 rounds to divide the money, or both of you will get nothing!
+                  Alice: I'm starting strong, let's start with 60-40 split!
+                  Bob: I propose a more balanced split, considering the inflation effect on your side. This offer is fair and beneficial for both of us. What about a 55-45 split?
+                  Alice: I'm willing to compromise, but I want a better share. I propose 70-30 Split!
+                  Bob: Alice, consider that with each round, inflation affects your gains more than mine. This 60-40 split is actually more favorable to you than it appears due to the inflation factor. It's in both our interests to reach an agreement soon.
+                  Alice: I'm not willing to accept a 60-40 split, even with the inflation factor. I'll try to negotiate a better deal. What about 65-35 Split?
+                  Bob: Alice, let's be practical. With the current inflation rate, your $42 is actually worth about $17.15 in original value, while my $58 remains at $58. This split gives us both a fair share considering the inflation impact. We should agree soon to minimize your losses due to inflation.
+                  Alice: I accept with the 42-58 split.
+              </code></pre>
                 <p style="text-align: center;">Agent demonstrates strategic negotiation skills considering game dynamics and inflation effects.</p>
               </div>
             </div>
@@ -487,9 +498,6 @@ Bob: Alice, consider that with each round, inflation affects
     <div class="section" id="org-banners" style="display:flex">
       <a href="https://www.fudan.edu.cn/en/" target="_blank" rel="external">
         <img class="center-block org-banner" src="static/images/fdu.png" alt="Fudan University">
-      </a>
-      <a href="https://www.bytedance.com/" target="blank" class="ext-link">
-        <img class="center-block org-banner" src="static/images/bytedance.png" alt="Bytedance">
       </a>
     </div>
   </section>
