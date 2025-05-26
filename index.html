@@ -358,13 +358,13 @@
             <div class="box m-5">
               <div class="content has-text-centered">
                 <img src="static/images/main_results_adversarial.png" alt="Main Results Adversarial" height="25%" />
-                <p>Main results on multi-agent games. ARIA achieves significant improvements of 9.67% and 9.83% on Bargaining and Negotiation tasks respectively, consistently outperforming strong offline and online RL baselines.
+                <p>Main results on adversarial games. ARIA achieves significant improvements of 9.67% and 9.83% on Bargaining and Negotiation tasks respectively, consistently outperforming strong offline and online RL baselines.
                 </p>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/main_results_single.png" alt="Main Results Single" width="50%" />
+                <img src="static/images/main_results_single.png" alt="Main Results Single" width="25%" />
                 <p>
                   Main results on single-agent games. ARIA outperforms all baselines by an average of 9.82% on Twenty Questions and Guess My City tasks, demonstrating its effectiveness across different task types.
               </div>
@@ -381,24 +381,24 @@
 
       <div class="columns is-centered m-6">
         <div class="column is-full has-text-centered content">
-          <h2 class="title is-3">Analysis and Ablation Study</h2>
+          <h2 class="title is-3">Analysis</h2>
           <div id="results-carousel" class="carousel results-carousel">
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/ablation_win_rates.png" alt="Ablation Win Rates" width="60%" />
+                <img src="static/images/ablation_win_rates.png" alt="Reward Aggregation Significantly Reduces Reward Variance" width="60%" />
                 <p>Ablation study on win rates showing the contribution of different components of ARIA. Both reward decay and reward aggregation contribute to performance improvements.
                 </p>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/ablation_loss.png" alt="Ablation Loss" width="60%" />
+                <img src="static/images/ablation_loss.png" alt="Reward Aggregation Improves Policy Optimization" width="60%" />
                 <p>Training loss curves under different ablation settings, demonstrating that ARIA accelerates loss reduction and enables faster policy updates through semantic-level reward aggregation.</p>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/generalization_results.png" alt="Generalization" width="70%" />
+                <img src="static/images/generalization_results.png" alt="Generalization to Other Models" width="70%" />
                 <p>Generalization results on different models (Qwen2.5-7B and Qwen2.5-1.5B) showing consistent improvements, demonstrating that ARIA is model-agnostic.</p>
               </div>
             </div>
