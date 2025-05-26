@@ -380,7 +380,7 @@
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/online_results.png" alt="Online Results" width="75%" />
+                <img src="static/images/online_results.png" alt="Online Results" width="72%" />
                 <p>Online ARIA results showing faster convergence and higher returns compared to existing online methods (ArCHer and RAGEN) across iterations.</p>
               </div>
             </div>
@@ -394,20 +394,20 @@
           <div id="results-carousel" class="carousel results-carousel">
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/reward_variance.png" alt="Reward Aggregation Significantly Reduces Reward Variance" width="82%" />
+                <img src="static/images/reward_variance.png" alt="Reward Aggregation Significantly Reduces Reward Variance" width="78%" />
                 <p><strong>Reward Aggregation Significantly Reduces Reward Variance:</strong> Our analysis demonstrates that reward aggregation markedly reduces the fluctuation range of action rewards compared to binary reward distributions that are highly polarized with values concentrated near 0 or 1. In large action spaces where most actions are sampled only once, the original binary rewards result in high variance. Through reward aggregation, actions within the same semantic cluster share a common reward, which significantly smooths the distribution and reduces variance across all tasks, highlighting the effectiveness and necessity of this approach in stabilizing policy learning.
                 </p>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/optimize_policy.png" alt="Reward Aggregation Improves Policy Optimization" width="82%" />
+                <img src="static/images/optimize_policy.png" alt="Reward Aggregation Improves Policy Optimization" width="78%" />
                 <p><strong>Reward Aggregation Improves Policy Optimization:</strong> The policy loss curves reveal that ARIA, which applies semantic-level reward aggregation, accelerates loss reduction compared to vanilla REINFORCE baseline, providing stronger learning signals and enabling faster policy updates with improved sample efficiency. Despite converging to similar loss levels, ARIA outperforms other variants by 17.91% and 13.80% on bargaining and negotiation tasks respectively. We attribute these gains to the complementary effects of reward decay (introducing temporal structure for credit assignment) and reward aggregation (substantially lowering reward variance through shared signals for semantically similar actions), resulting in improved gradient estimation quality.</p>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/generalization_results.png" alt="Generalization to Other Models" width="50%" />
+                <img src="static/images/generalization_results.png" alt="Generalization to Other Models" width="53%" />
                 <p><strong>Generalization to Other Models:</strong> To assess the transferability of ARIA, we applied it to Qwen models (Qwen2.5-7B-Instruct and Qwen2.5-1.5B-Instruct) and observed consistent improvements across different base models. This demonstrates that our reward aggregation approach is model-agnostic and independent of specific architectural features or pretraining data of the underlying language models. We attribute this generalizability to the shared structural properties in the semantic spaces learned by large-scale language models, allowing ARIA to leverage these commonalities while preserving task-specific discriminative signals.</p>
               </div>
             </div>
