@@ -105,7 +105,7 @@
               <b>TimeArena🔥🔥🔥</b>
             </a>
             <a class="navbar-item" href="https://auction-arena.github.io/">
-              <b>AuctionArena</b>
+              <b>AuctionArena🔥🔥🔥</b>
             </a>
           </div>
         </div>
@@ -312,98 +312,42 @@
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Semantic Projection</h2>
+          <h2 class="title is-3">Semantic Embedding and Clustering</h2>
           <div class="content has-text-justified">
             <p>
-              We introduce <svg width="24" height="16" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle; margin: 0 2px;">
-                <defs>
-                  <linearGradient id="vintage_inline1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#D63031;stop-opacity:1" />
-                    <stop offset="33%" style="stop-color:#E17055;stop-opacity:1" />
-                    <stop offset="66%" style="stop-color:#FDCB6E;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#E84393;stop-opacity:1" />
-                  </linearGradient>
-                  <linearGradient id="vintage_inline1_sec" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#74B9FF;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#0984E3;stop-opacity:1" />
-                  </linearGradient>
-                </defs>
-                <circle cx="40" cy="40" r="6" fill="url(#vintage_inline1)"/>
-                <circle cx="25" cy="28" r="2.5" fill="url(#vintage_inline1_sec)"/>
-                <circle cx="22" cy="35" r="2.5" fill="url(#vintage_inline1_sec)"/>
-                <circle cx="28" cy="45" r="2.5" fill="url(#vintage_inline1_sec)"/>
-                <circle cx="55" cy="25" r="2.5" fill="url(#vintage_inline1_sec)"/>
-                <circle cx="58" cy="35" r="2.5" fill="url(#vintage_inline1_sec)"/>
-                <circle cx="52" cy="38" r="2.5" fill="url(#vintage_inline1_sec)"/>
-                <line x1="40" y1="40" x2="25" y2="28" stroke="url(#vintage_inline1)" stroke-width="1" opacity="0.7"/>
-                <line x1="40" y1="40" x2="22" y2="35" stroke="url(#vintage_inline1)" stroke-width="1" opacity="0.7"/>
-                <line x1="40" y1="40" x2="28" y2="45" stroke="url(#vintage_inline1)" stroke-width="1" opacity="0.7"/>
-                <line x1="40" y1="40" x2="55" y2="25" stroke="url(#vintage_inline1)" stroke-width="1" opacity="0.7"/>
-                <line x1="40" y1="40" x2="58" y2="35" stroke="url(#vintage_inline1)" stroke-width="1" opacity="0.7"/>
-                <line x1="40" y1="40" x2="52" y2="38" stroke="url(#vintage_inline1)" stroke-width="1" opacity="0.7"/>
-              </svg>ARIA, which maps token-level actions into a task-specific intention space, enabling reward aggregation across semantically similar actions to stabilize and improve policy learning. The key insight is that LLM agents' actions often reflect underlying intentions, which are far fewer than token sequences.
+              We embed each interaction instance x ∈ A ∪ O using an embedder e, where x can represent either an action a or an observation o, producing the embedding vector e(x). We then apply Hierarchical Agglomerative Clustering to the embedding vectors at an optimal granularity level k, determined through reward-oriented granularity selection. Each instance x is assigned a cluster label c_k(x).
             </p>
             <p>
-              For example, the utterances "I will concede first in order to encourage my opponent to compromise" and "By taking the initiative to compromise, I aim to prompt my counterpart to do the same" convey the same intention of prompting compromise through concession. By grouping such actions under shared intentions, we reduce the action space from V<sup>L</sup> to intention space C, where |C| ≪ |V<sup>L</sup>|.
+              For each step t, we map cluster labels to actions and observations: ã_t = c_k(a) and õ_t = c_k(o). This produces a cluster label sequence h̃_t = {c_k(a_1), c_k(o_1), ..., c_k(a_{t-1}), c_k(o_{t-1})}, effectively projecting the high-dimensional token space into a low-dimensional intention space where |C| ≪ |V^L|.
             </p>
-            <div class="content has-text-centered">
-              <img src="static/images/semantic_projection.png" alt="Semantic Projection" style="max-width: 80%;" />
-              <p>
-                Illustration of semantic projection from high-dimensional token space to low-dimensional intention space.
-              </p>
-            </div>
           </div>
         </div>
       </div>
 
-      <div class="columns is-centered m-6">
-        <div class="column is-full has-text-centered content">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
           <h2 class="title is-3">Reward Aggregation</h2>
-          <div class="container is-max-desktop">
-            <div class="content has-text-centered">
-              <img src="static/images/reward_aggregation.png" alt="Reward Aggregation" style="max-width: 100%;" />
-              <p><svg width="24" height="16" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="display: inline; vertical-align: middle; margin: 0 2px;">
-                <defs>
-                  <linearGradient id="vintage_inline2" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#D63031;stop-opacity:1" />
-                    <stop offset="33%" style="stop-color:#E17055;stop-opacity:1" />
-                    <stop offset="66%" style="stop-color:#FDCB6E;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#E84393;stop-opacity:1" />
-                  </linearGradient>
-                  <linearGradient id="vintage_inline2_sec" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#74B9FF;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#0984E3;stop-opacity:1" />
-                  </linearGradient>
-                </defs>
-                <circle cx="40" cy="40" r="6" fill="url(#vintage_inline2)"/>
-                <circle cx="25" cy="28" r="2.5" fill="url(#vintage_inline2_sec)"/>
-                <circle cx="22" cy="35" r="2.5" fill="url(#vintage_inline2_sec)"/>
-                <circle cx="28" cy="45" r="2.5" fill="url(#vintage_inline2_sec)"/>
-                <circle cx="55" cy="25" r="2.5" fill="url(#vintage_inline2_sec)"/>
-                <circle cx="58" cy="35" r="2.5" fill="url(#vintage_inline2_sec)"/>
-                <circle cx="52" cy="38" r="2.5" fill="url(#vintage_inline2_sec)"/>
-                <line x1="40" y1="40" x2="25" y2="28" stroke="url(#vintage_inline2)" stroke-width="1" opacity="0.7"/>
-                <line x1="40" y1="40" x2="22" y2="35" stroke="url(#vintage_inline2)" stroke-width="1" opacity="0.7"/>
-                <line x1="40" y1="40" x2="28" y2="45" stroke="url(#vintage_inline2)" stroke-width="1" opacity="0.7"/>
-                <line x1="40" y1="40" x2="55" y2="25" stroke="url(#vintage_inline2)" stroke-width="1" opacity="0.7"/>
-                <line x1="40" y1="40" x2="58" y2="35" stroke="url(#vintage_inline2)" stroke-width="1" opacity="0.7"/>
-                <line x1="40" y1="40" x2="52" y2="38" stroke="url(#vintage_inline2)" stroke-width="1" opacity="0.7"/>
-              </svg>ARIA
-                performs hierarchical clustering on sentence embeddings and aggregates rewards within each cluster. This process reduces reward variance while preserving essential discriminative signals.
-              </p>
-            </div>
+          <div class="content has-text-justified">
+            <p>
+              Let c(τ) = {c_k(a_1), c_k(o_1), ..., c_k(a_T), c_k(o_T)} denote the labeled sequence of trajectory τ and R denote the reward. We calculate the return at step t as discounted reward: R(h_t, a_t) = γ^{T-t} R.
+            </p>
+            <p>
+              The aggregated return is computed as: R̃(h̃_t, ã_t) = (1/|D_{h̃_t, ã_t}|) ∑_{τ ∈ D_{h̃_t, ã_t}} R(h̃_t, ã_t), where D_{h̃_t, ã_t} denotes all trajectories with (h̃_t, ã_t) as prefix in the intention sequences. Finally, we assign R̃(h̃_t, ã_t) to (h_t, a_t) and use it as advantage Ã(h_t, a_t) for optimization.
+            </p>
           </div>
         </div>
       </div>
     
-      <div class="columns is-centered m-6">
-        <div class="column is-full has-text-centered content">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
           <h2 class="title is-3">Reward-Oriented Granularity Selection</h2>
-          <div class="container is-max-desktop">
-            <div class="content has-text-centered">
-              <img src="static/images/clustering_quality.png" alt="Clustering Quality" style="max-width: 70%;" />
-              <p>Reward-oriented granularity selection mechanism that assesses whether further splitting clusters yields meaningful reward change, using SplitScore metric to determine optimal clustering granularity k*.</p>
-            </div>
+          <div class="content has-text-justified">
+            <p>
+              Traditional clustering metrics tend to favor overly coarse groupings, overlooking fine-grained distinctions critical for RL tasks. We propose a reward-oriented granularity selection mechanism that assesses whether further splitting clusters yields meaningful reward change.
+            </p>
+            <p>
+              We define <strong>SplitScore</strong>: SplitScore(k) = δ_k/|D|, where δ_k = |R̃^{(k+1)}(h_t, a_t) - R̃^{(k)}(h_t, a_t)| represents the reward change when clusters increase from k to k+1. We use an automatic stopping criterion: given threshold ε > 0 and window size τ, we stop splitting when SplitScore(j) < ε for all j ∈ [k, k + τ]. This selects the optimal granularity k* that balances space compression with reward discriminability.
+            </p>
           </div>
         </div>
       </div>
