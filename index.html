@@ -37,6 +37,546 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+  
+  <!-- MathJax for rendering LaTeX -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+
+  <style>
+    pre {
+        max-height: 400px; 
+        overflow-x: auto; 
+        overflow-y: auto;
+        background-color: #f0f0f0; 
+        padding: 10px;
+        border: 1px solid #ccc; 
+        text-align: left;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.1); }
+    }
+    
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .floating-dot {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .pulsing-dot {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    .rotating-logo {
+      animation: rotate 20s linear infinite;
+      transform-origin: 100px 100px;
+    }
+    
+    .floating-dot:nth-child(2) { animation-delay: 0.5s; }
+    .floating-dot:nth-child(3) { animation-delay: 1s; }
+    .floating-dot:nth-child(4) { animation-delay: 1.5s; }
+    .floating-dot:nth-child(5) { animation-delay: 2s; }
+</style>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://selfgoal-agent.github.io/">
+              <b>SELFGOAL🔥🔥🔥</b>
+            </a>
+            <a class="navbar-item" href="https://time-arena.github.io/">
+              <b>TimeArena🔥🔥🔥</b>
+            </a>
+            <a class="navbar-item" href="https://auction-arena.github.io/">
+              <b>AuctionArena</b>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <div class="title is-1 publication-title is-bold" style="display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+              <svg width="640" height="220" viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" style="margin-right: 0;">
+                <defs>
+                  <linearGradient id="vintage" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#D63031;stop-opacity:1" />
+                    <stop offset="33%" style="stop-color:#E17055;stop-opacity:1" />
+                    <stop offset="66%" style="stop-color:#FDCB6E;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#E84393;stop-opacity:1" />
+                  </linearGradient>
+                  <linearGradient id="vintage_sec" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#74B9FF;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#0984E3;stop-opacity:1" />
+                  </linearGradient>
+                  <filter id="vintage_shadow">
+                    <feDropShadow dx="4" dy="4" stdDeviation="6" flood-opacity="0.4"/>
+                  </filter>
+                  <filter id="vintage_glow">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <feMerge> 
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                
+                <!-- 背景光晕效果 -->
+                <circle cx="140" cy="140" r="100" fill="url(#vintage)" opacity="0.06"/>
+                <circle cx="140" cy="140" r="85" fill="url(#vintage)" opacity="0.08"/>
+                <circle cx="140" cy="140" r="70" fill="url(#vintage)" opacity="0.12"/>
+                
+                <!-- 主要图标 -->
+                <g transform="translate(40, 40)" class="rotating-logo">
+                  <!-- 中心节点 -->
+                  <circle cx="100" cy="100" r="16" fill="url(#vintage)" filter="url(#vintage_glow)" stroke="url(#vintage)" stroke-width="1.5" opacity="0.9"/>
+                  
+                  <!-- 周围节点 - 减少到6个，更有层次感 -->
+                  <circle cx="60" cy="70" r="8" fill="url(#vintage_sec)" filter="url(#vintage_glow)" opacity="0.8"/>
+                  <circle cx="140" cy="70" r="8" fill="url(#vintage_sec)" filter="url(#vintage_glow)" opacity="0.8"/>
+                  <circle cx="50" cy="130" r="7" fill="url(#vintage_sec)" filter="url(#vintage_glow)" opacity="0.75"/>
+                  <circle cx="150" cy="130" r="7" fill="url(#vintage_sec)" filter="url(#vintage_glow)" opacity="0.75"/>
+                  <circle cx="100" cy="50" r="6" fill="url(#vintage_sec)" filter="url(#vintage_glow)" opacity="0.7"/>
+                  <circle cx="100" cy="160" r="6" fill="url(#vintage_sec)" filter="url(#vintage_glow)" opacity="0.7"/>
+                  
+                  <!-- 连接线 - 更细更轻盈 -->
+                  <line x1="100" y1="100" x2="60" y2="70" stroke="url(#vintage)" stroke-width="2" opacity="0.5"/>
+                  <line x1="100" y1="100" x2="140" y2="70" stroke="url(#vintage)" stroke-width="2" opacity="0.5"/>
+                  <line x1="100" y1="100" x2="50" y2="130" stroke="url(#vintage)" stroke-width="2" opacity="0.5"/>
+                  <line x1="100" y1="100" x2="150" y2="130" stroke="url(#vintage)" stroke-width="2" opacity="0.5"/>
+                  <line x1="100" y1="100" x2="100" y2="50" stroke="url(#vintage)" stroke-width="2" opacity="0.5"/>
+                  <line x1="100" y1="100" x2="100" y2="160" stroke="url(#vintage)" stroke-width="2" opacity="0.5"/>
+                </g>
+                
+                <!-- ARIA文字 - 更大更突出 -->
+                <text x="320" y="170" font-family="Inter, Arial, sans-serif" font-size="108" font-weight="bold" fill="url(#vintage)" filter="url(#vintage_shadow)">ARIA</text>
+                
+                <!-- 右上角动态装饰元素 -->
+                <g class="floating-decorations">
+                  <circle cx="680" cy="60" r="4" fill="url(#vintage_sec)" class="floating-dot pulsing-dot" opacity="0.6"/>
+                  <circle cx="720" cy="80" r="3" fill="url(#vintage)" class="floating-dot pulsing-dot" opacity="0.5"/>
+                  <circle cx="700" cy="100" r="2.5" fill="url(#vintage_sec)" class="floating-dot pulsing-dot" opacity="0.7"/>
+                  <circle cx="750" cy="45" r="2" fill="url(#vintage)" class="floating-dot pulsing-dot" opacity="0.4"/>
+                  <circle cx="730" cy="120" r="1.5" fill="url(#vintage_sec)" class="floating-dot pulsing-dot" opacity="0.6"/>
+                </g>
+                
+                <!-- 副标题 -->
+                <text x="320" y="210" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="500" fill="url(#vintage)" opacity="0.6">INTENTION-DRIVEN REWARD AGGREGATION</text>
+              </svg>
+            </div>
+            <h2 class="subtitle is-2 publication-subtitle" style="font-size: 2rem; margin-top: 1rem;">
+              Training Language Agents with Intention-Driven Reward Aggregation
+            </h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="#">Ruihan Yang*</a><sup style="color:#6fbf73;">1</sup>,</span>
+              <span class="author-block">
+                <a href="#">Yikai Zhang*</a><sup style="color:#6fbf73;">1</sup>,</span>
+              <span class="author-block">
+                <a href="#">Aili Chen</a><sup style="color:#6fbf73;">1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="#">Xintao Wang</a><sup style="color:#6fbf73">1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="#">Siyu Yuan</a><sup style="color:#6fbf73">1</sup>,
+              </span>
+              <br>
+              <span class="author-block">
+                <a href="https://jiangjiechen.github.io/">Jiangjie Chen</a><sup style="color:#ed4b82;">2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="#">Deqing Yang</a><sup style="color:#6fbf73;">1†</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=odFW4FoAAAAJ">Yanghua Xiao</a><sup style="color:#6fbf73;">1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup style="color:#6fbf73;">1</sup>Fudan University</span>
+              <span class="author-block"><sup style="color:#ed4b82">2</sup>Bytedance Seed</span><br>
+              <span class="author-block">* Equal Contribution</span><br>
+              <span class="author-block">† Corresponding author</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="static/papers/aria_paper.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <p style="font-size:18px">🤗</p>
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="content has-text-centered">
+        <img src="static/images/aria_overview.png" alt="ARIA Overview" width="100%" />
+        <p>Overview of ARIA. ARIA first lets agents interact to collect trajectories, then performs semantic projection and aggregates rewards in the intention space, and finally updates the policy using the aggregated rewards.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="margin-bottom: 2vh;">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Introduction</h2>
+          <div class="content has-text-justified">
+            <p>
+              Large language models (LLMs) have enabled agents to perform complex reasoning and decision-making through free-form language interactions. However, in open-ended language action environments (e.g., negotiation or question-asking games), the action space can be formulated as a joint distribution over tokens, resulting in an extremely large and combinatorial action space. Sampling actions in such a space can lead to extreme reward sparsity, which brings large reward variance, hindering effective reinforcement learning (RL).
+            </p>
+            <p>
+              To address this, we propose ARIA, a method that Aggregates Rewards in Intention space to enable efficient and effective language Agents training. ARIA aims to project natural language actions from the high-dimensional joint token distribution space into a low-dimensional intention space, where semantically similar actions are clustered and assigned shared rewards. This intention-aware reward aggregation reduces reward variance by densifying reward signals, fostering efficient and effective policy optimization.
+            </p>
+            <p>
+              Extensive experiments demonstrate that ARIA not only significantly reduces gradient variance, but also delivers substantial performance gains of average 9.95% across four downstream tasks (e.g., negotiation and text-based games), consistently outperforming strong offline and online RL baselines.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD SECTION -->
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 mathvista">ARIA Method</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Reward Aggregation</h2>
+          <div class="content has-text-justified">
+            <p>
+              Let $c(\tau) = \{c_k(a_1), c_k(o_1), \ldots, c_k(a_T), c_k(o_T)\}$ denote the labeled sequence of trajectory $\tau$ and $R$ denote the reward. First, we have the return at $t$ step as discounted reward with coefficient $\gamma$:
+            </p>
+            <div class="has-text-centered">
+              $R(h_t, a_t) = \gamma^{T-t} R$
+            </div>
+            <p>
+              Then, we calculate the aggregated return as:
+            </p>
+            <div class="has-text-centered">
+              $\tilde{R}(\tilde{h}_t, \tilde{a}_t) = \frac{1}{|\mathcal{D}_{\tilde{h}_t, \tilde{a}_t}|} \sum_{\tau \in \mathcal{D}_{\tilde{h}_t, \tilde{a}_t}} R(\tilde{h}_t, \tilde{a}_t)$
+            </div>
+            <p>
+              where $\mathcal{D}_{\tilde{h}_t, \tilde{a}_t}$ denotes all trajectories with $(\tilde{h}_t, \tilde{a}_t)$ as prefix in the intention sequences. Finally, we assign $\tilde{R}(\tilde{h}_t, \tilde{a}_t)$ to $(h_t, a_t)$ and use it as advantage $\tilde{A}(h_t,a_t)$ for optimization.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Reward-Oriented Granularity Selection For Clustering</h2>
+          <div class="content has-text-justified">
+            <p>
+              Traditional clustering metrics tend to favor overly coarse groupings due to high similarity among actions, overlooking fine-grained distinctions critical for RL tasks. We propose a reward-oriented granularity selection mechanism that assesses whether further splitting clusters yields meaningful reward change.
+            </p>
+            <p>
+              <strong>SplitScore:</strong> Let $k \in [2, K]$ denote all possible granularity levels. We use SplitScore to select the optimal granularity $k^{*}$, defined as:
+            </p>
+            <div class="has-text-centered">
+              $\text{SplitScore}(k) = \frac{\delta_k}{|\mathcal{D}|}$
+            </div>
+            <p>
+              where $\delta_k = \left| \tilde{R}^{(k+1)}(h_t, a_t) - \tilde{R}^{(k)}(h_t, a_t) \right|$ represents the reward change when the number of clusters changes from $k$ to $k+1$, and $\mathcal{D}$ is the collection of all $(h_t, a_t)$ pairs.
+            </p>
+            <p>
+              <strong>Automatic Stopping Criterion:</strong> Given a threshold $\epsilon > 0$ and window size $\tau$, we stop splitting when $\text{SplitScore}(j) < \epsilon$ for all $j \in [k, k + \tau]$ as $k$ increases. The selected $k$ is then taken as $k^*$.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Offline REINFORCE with Aggregated Reward</h2>
+          <div class="content has-text-justified">
+            <p>
+              We use the offline REINFORCE algorithm to optimize the policy. Formally, let $\pi_\theta(a \mid s)$ denote the policy parameterized by $\theta$ and assign the aggregated reward $\tilde{R}^{(k)}(h_t,a_t)$ to $\tilde{A}(h_t,a_t)$. ARIA optimizes the model by maximizing the following objective:
+            </p>
+            <div class="has-text-centered">
+              $J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^T  \log \pi_\theta(a_t \mid h_t) \cdot \tilde{A}(h_t,a_t) \right]$
+            </div>
+            <p>
+              This objective leverages the variance-reduced advantages obtained through intention-aware reward aggregation, enabling more stable and efficient policy updates compared to standard REINFORCE with sparse rewards.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS SECTION -->
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 mathvista">Experimental Results</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered m-6">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3">Main Results</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/main_results_adversarial.png" alt="Main Results Adversarial" height="50%" />
+                <p>Main results on multi-agent games. ARIA achieves significant improvements of 9.67% and 9.83% on Bargaining and Negotiation tasks respectively, consistently outperforming strong offline and online RL baselines.
+                </p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/main_results_single.png" alt="Main Results Single" width="80%" />
+                <p>
+                  Main results on single-agent games. ARIA outperforms all baselines by an average of 9.82% on Twenty Questions and Guess My City tasks, demonstrating its effectiveness across different task types.
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/variance_reduction.png" alt="Variance Reduction" width="80%" />
+                <p>Reward variance reduction through aggregation. ARIA significantly reduces reward variance across all four tasks, stabilizing policy learning and enabling more efficient optimization.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/online_results.png" alt="Online Results" width="90%" />
+                <p>Online ARIA results showing faster convergence and higher returns compared to existing online methods (ArCHer and RAGEN) across iterations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered m-6">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3">Analysis and Ablation Study</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/ablation_win_rates.png" alt="Ablation Win Rates" width="60%" />
+                <p>Ablation study on win rates showing the contribution of different components of ARIA. Both reward decay and reward aggregation contribute to performance improvements.
+                </p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/ablation_loss.png" alt="Ablation Loss" width="60%" />
+                <p>Training loss curves under different ablation settings, demonstrating that ARIA accelerates loss reduction and enables faster policy updates through semantic-level reward aggregation.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/generalization_results.png" alt="Generalization" width="70%" />
+                <p>Generalization results on different models (Qwen2.5-7B and Qwen2.5-1.5B) showing consistent improvements, demonstrating that ARIA is model-agnostic.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEORETICAL ANALYSIS SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Theoretical Analysis</h2>
+          <div class="content has-text-justified">
+            <p>
+              We provide theoretical analysis showing that intention clustering-based aggregation reduces the variance of gradient descent while maintaining a small bound of bias, thus improving training stability and efficiency.
+            </p>
+            <p>
+              <strong>Variance Reduction:</strong> By replacing original advantages A with cluster-averaged advantages Ã, we remove the intra-cluster variance E[Var(A | C)], lowering the total variance of the policy gradient estimate: Var(Ã) ≤ Var(A).
+            </p>
+            <p>
+              <strong>Bounded Bias:</strong> Through ε-bisimulation analysis, we show that the bias introduced by reward aggregation is bounded: |E[∇θ log πθ(a | h)(A(h, a) − Ã(h, a))]| ≤ O(ε), where actions within each cluster are ε-bisimilar.
+            </p>
+            <p>
+              <strong>Convergence Improvement:</strong> The variance reduction leads to faster convergence with fewer samples: ∥ĝ − g∥₂ = O(√σ/N), where σ is reduced through clustering.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered m-6">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3">Case Studies</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-left">
+                <h4><strong>Twenty Questions Example</strong></h4>
+                <pre><code>Actor: Is it a living thing? Oracle: Yes.
+Actor: Is it a mammal? Oracle: Yes.
+Actor: Is it a human? Oracle: No.
+Actor: Is it a carnivore? Oracle: No.
+Actor: Is it a cow? Oracle: Yes.</code></pre>
+                <p style="text-align: center;">Agent successfully identifies the target object within 5 turns using strategic questioning.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-left">
+                <h4><strong>Bargaining Example</strong></h4>
+                <pre><code>Alice: I'm starting strong, let's start with 60-40 split!
+Bob: I propose a more balanced split, considering the inflation 
+     effect on your side. What about a 55-45 split?
+Alice: I'm willing to compromise, but I want a better share. 
+       I propose 70-30 Split!
+Bob: Alice, consider that with each round, inflation affects 
+     your gains more than mine. This 60-40 split is actually 
+     more favorable to you...</code></pre>
+                <p style="text-align: center;">Agent demonstrates strategic negotiation skills considering game dynamics and inflation effects.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <h4><strong>Clustering Visualization</strong></h4>
+                <img src="static/images/clustering_tree.png" alt="Clustering Tree" width="80%" />
+                <p>Hierarchical clustering results showing semantic grouping of actions in bargaining scenarios into meaningful intention categories like "Offer", "Decision", "Compromise", etc.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIBTEX SECTION -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3 has-text-centered">BibTeX</h2>
+      <pre><code>@article{yang2024aria,
+  title={ARIA: Training Language Agents with Intention-Driven Reward Aggregation},
+  author={Yang, Ruihan and Zhang, Yikai and Chen, Aili and Wang, Xintao and Yuan, Siyu and Chen, Jiangjie and Yang, Deqing and Xiao, Yanghua},
+  journal={arXiv preprint},
+  year={2024}
+}</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <div class="section" id="org-banners" style="display:flex">
+      <a href="https://www.fudan.edu.cn/en/" target="_blank" rel="external">
+        <img class="center-block org-banner" src="static/images/fdu.png" alt="Fudan University">
+      </a>
+      <a href="https://www.bytedance.com/" target="blank" class="ext-link">
+        <img class="center-block org-banner" src="static/images/bytedance.png" alt="Bytedance">
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://mathvista.github.io/">MathVista</a>, licensed under a <a
+              rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>, '
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -116,6 +656,522 @@
             </a>
             <a class="navbar-item" href="https://auction-arena.github.io/">
               <b>AuctionArena🔥🔥🔥</b>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <div class="title is-1 publication-title is-bold" style="display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+              <svg width="640" height="220" viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" style="margin-right: 0;">
+                <defs>
+                  <linearGradient id="vintage" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#D63031;stop-opacity:1" />
+                    <stop offset="33%" style="stop-color:#E17055;stop-opacity:1" />
+                    <stop offset="66%" style="stop-color:#FDCB6E;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#E84393;stop-opacity:1" />
+                  </linearGradient>
+                  <linearGradient id="vintage_sec" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#74B9FF;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#0984E3;stop-opacity:1" />
+                  </linearGradient>
+                  <filter id="vintage_shadow">
+                    <feDropShadow dx="4" dy="4" stdDeviation="6" flood-opacity="0.4"/>
+                  </filter>
+                  <filter id="vintage_glow">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <feMerge> 
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                
+                <!-- 背景光晕效果 -->
+                <circle cx="140" cy="140" r="100" fill="url(#vintage)" opacity="0.06"/>
+                <circle cx="140" cy="140" r="85" fill="url(#vintage)" opacity="0.08"/>
+                <circle cx="140" cy="140" r="70" fill="url(#vintage)" opacity="0.12"/>
+                
+                <!-- 主要图标 -->
+                <g transform="translate(40, 40)" class="rotating-logo">
+                  <!-- 中心节点 -->
+                  <circle cx="100" cy="100" r="16" fill="url(#vintage)" filter="url(#vintage_glow)" stroke="url(#vintage)" stroke-width="1.5" opacity="0.9"/>
+                  
+                  <!-- 周围节点 - 减少到6个，更有层次感 -->
+                  <circle cx="60" cy="70" r="8" fill="url(#vintage_sec)" filter="url(#vintage_glow)" opacity="0.8"/>
+                  <circle cx="140" cy="70" r="8" fill="url(#vintage_sec)" filter="url(#vintage_glow)" opacity="0.8"/>
+                  <circle cx="50" cy="130" r="7" fill="url(#vintage_sec)" filter="url(#vintage_glow)" opacity="0.75"/>
+                  <circle cx="150" cy="130" r="7" fill="url(#vintage_sec)" filter="url(#vintage_glow)" opacity="0.75"/>
+                  <circle cx="100" cy="50" r="6" fill="url(#vintage_sec)" filter="url(#vintage_glow)" opacity="0.7"/>
+                  <circle cx="100" cy="160" r="6" fill="url(#vintage_sec)" filter="url(#vintage_glow)" opacity="0.7"/>
+                  
+                  <!-- 连接线 - 更细更轻盈 -->
+                  <line x1="100" y1="100" x2="60" y2="70" stroke="url(#vintage)" stroke-width="2" opacity="0.5"/>
+                  <line x1="100" y1="100" x2="140" y2="70" stroke="url(#vintage)" stroke-width="2" opacity="0.5"/>
+                  <line x1="100" y1="100" x2="50" y2="130" stroke="url(#vintage)" stroke-width="2" opacity="0.5"/>
+                  <line x1="100" y1="100" x2="150" y2="130" stroke="url(#vintage)" stroke-width="2" opacity="0.5"/>
+                  <line x1="100" y1="100" x2="100" y2="50" stroke="url(#vintage)" stroke-width="2" opacity="0.5"/>
+                  <line x1="100" y1="100" x2="100" y2="160" stroke="url(#vintage)" stroke-width="2" opacity="0.5"/>
+                </g>
+                
+                <!-- ARIA文字 - 更大更突出 -->
+                <text x="320" y="170" font-family="Inter, Arial, sans-serif" font-size="108" font-weight="bold" fill="url(#vintage)" filter="url(#vintage_shadow)">ARIA</text>
+                
+                <!-- 右上角动态装饰元素 -->
+                <g class="floating-decorations">
+                  <circle cx="680" cy="60" r="4" fill="url(#vintage_sec)" class="floating-dot pulsing-dot" opacity="0.6"/>
+                  <circle cx="720" cy="80" r="3" fill="url(#vintage)" class="floating-dot pulsing-dot" opacity="0.5"/>
+                  <circle cx="700" cy="100" r="2.5" fill="url(#vintage_sec)" class="floating-dot pulsing-dot" opacity="0.7"/>
+                  <circle cx="750" cy="45" r="2" fill="url(#vintage)" class="floating-dot pulsing-dot" opacity="0.4"/>
+                  <circle cx="730" cy="120" r="1.5" fill="url(#vintage_sec)" class="floating-dot pulsing-dot" opacity="0.6"/>
+                </g>
+                
+                <!-- 副标题 -->
+                <text x="320" y="210" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="500" fill="url(#vintage)" opacity="0.6">INTENTION-DRIVEN REWARD AGGREGATION</text>
+              </svg>
+            </div>
+            <h2 class="subtitle is-2 publication-subtitle" style="font-size: 2rem; margin-top: 1rem;">
+              Training Language Agents with Intention-Driven Reward Aggregation
+            </h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="#">Ruihan Yang*</a><sup style="color:#6fbf73;">1</sup>,</span>
+              <span class="author-block">
+                <a href="#">Yikai Zhang*</a><sup style="color:#6fbf73;">1</sup>,</span>
+              <span class="author-block">
+                <a href="#">Aili Chen</a><sup style="color:#6fbf73;">1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="#">Xintao Wang</a><sup style="color:#6fbf73">1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="#">Siyu Yuan</a><sup style="color:#6fbf73">1</sup>,
+              </span>
+              <br>
+              <span class="author-block">
+                <a href="https://jiangjiechen.github.io/">Jiangjie Chen</a><sup style="color:#ed4b82;">2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="#">Deqing Yang</a><sup style="color:#6fbf73;">1†</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=odFW4FoAAAAJ">Yanghua Xiao</a><sup style="color:#6fbf73;">1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup style="color:#6fbf73;">1</sup>Fudan University</span>
+              <span class="author-block"><sup style="color:#ed4b82">2</sup>Bytedance Seed</span><br>
+              <span class="author-block">* Equal Contribution</span><br>
+              <span class="author-block">† Corresponding author</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="static/papers/aria_paper.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <p style="font-size:18px">🤗</p>
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="content has-text-centered">
+        <img src="static/images/aria_overview.png" alt="ARIA Overview" width="100%" />
+        <p>Overview of ARIA. ARIA first lets agents interact to collect trajectories, then performs semantic projection and aggregates rewards in the intention space, and finally updates the policy using the aggregated rewards.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="margin-bottom: 2vh;">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Introduction</h2>
+          <div class="content has-text-justified">
+            <p>
+              Large language models (LLMs) have enabled agents to perform complex reasoning and decision-making through free-form language interactions. However, in open-ended language action environments (e.g., negotiation or question-asking games), the action space can be formulated as a joint distribution over tokens, resulting in an extremely large and combinatorial action space. Sampling actions in such a space can lead to extreme reward sparsity, which brings large reward variance, hindering effective reinforcement learning (RL).
+            </p>
+            <p>
+              To address this, we propose ARIA, a method that Aggregates Rewards in Intention space to enable efficient and effective language Agents training. ARIA aims to project natural language actions from the high-dimensional joint token distribution space into a low-dimensional intention space, where semantically similar actions are clustered and assigned shared rewards. This intention-aware reward aggregation reduces reward variance by densifying reward signals, fostering efficient and effective policy optimization.
+            </p>
+            <p>
+              Extensive experiments demonstrate that ARIA not only significantly reduces gradient variance, but also delivers substantial performance gains of average 9.95% across four downstream tasks (e.g., negotiation and text-based games), consistently outperforming strong offline and online RL baselines.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD SECTION -->
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 mathvista">ARIA Method</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Semantic Embedding and Clustering</h2>
+          <div class="content has-text-justified">
+            <p>
+              We embed each interaction instance x ∈ A ∪ O using an embedder e, where x can represent either an action a or an observation o, producing the embedding vector e(x). We then apply Hierarchical Agglomerative Clustering to the embedding vectors at an optimal granularity level k, determined through reward-oriented granularity selection. Each instance x is assigned a cluster label c_k(x).
+            </p>
+            <p>
+              For each step t, we map cluster labels to actions and observations: ã_t = c_k(a) and õ_t = c_k(o). This produces a cluster label sequence h̃_t = {c_k(a_1), c_k(o_1), ..., c_k(a_{t-1}), c_k(o_{t-1})}, effectively projecting the high-dimensional token space into a low-dimensional intention space where |C| ≪ |V^L|.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Reward Aggregation</h2>
+          <div class="content has-text-justified">
+            <p>
+              Let c(τ) = {c_k(a_1), c_k(o_1), ..., c_k(a_T), c_k(o_T)} denote the labeled sequence of trajectory τ and R denote the reward. We calculate the return at step t as discounted reward: R(h_t, a_t) = γ^{T-t} R.
+            </p>
+            <p>
+              The aggregated return is computed as: R̃(h̃_t, ã_t) = (1/|D_{h̃_t, ã_t}|) ∑_{τ ∈ D_{h̃_t, ã_t}} R(h̃_t, ã_t), where D_{h̃_t, ã_t} denotes all trajectories with (h̃_t, ã_t) as prefix in the intention sequences. Finally, we assign R̃(h̃_t, ã_t) to (h_t, a_t) and use it as advantage Ã(h_t, a_t) for optimization.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Reward-Oriented Granularity Selection</h2>
+          <div class="content has-text-justified">
+            <p>
+              Traditional clustering metrics tend to favor overly coarse groupings, overlooking fine-grained distinctions critical for RL tasks. We propose a reward-oriented granularity selection mechanism that assesses whether further splitting clusters yields meaningful reward change.
+            </p>
+            <p>
+              We define <strong>SplitScore</strong>: SplitScore(k) = δ_k/|D|, where δ_k = |R̃^{(k+1)}(h_t, a_t) - R̃^{(k)}(h_t, a_t)| represents the reward change when clusters increase from k to k+1. We use an automatic stopping criterion: given threshold ε > 0 and window size τ, we stop splitting when SplitScore(j) < ε for all j ∈ [k, k + τ]. This selects the optimal granularity k* that balances space compression with reward discriminability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS SECTION -->
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 mathvista">Experimental Results</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered m-6">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3">Main Results</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/main_results_adversarial.png" alt="Main Results Adversarial" height="50%" />
+                <p>Main results on multi-agent games. ARIA achieves significant improvements of 9.67% and 9.83% on Bargaining and Negotiation tasks respectively, consistently outperforming strong offline and online RL baselines.
+                </p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/main_results_single.png" alt="Main Results Single" width="80%" />
+                <p>
+                  Main results on single-agent games. ARIA outperforms all baselines by an average of 9.82% on Twenty Questions and Guess My City tasks, demonstrating its effectiveness across different task types.
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/variance_reduction.png" alt="Variance Reduction" width="80%" />
+                <p>Reward variance reduction through aggregation. ARIA significantly reduces reward variance across all four tasks, stabilizing policy learning and enabling more efficient optimization.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/online_results.png" alt="Online Results" width="90%" />
+                <p>Online ARIA results showing faster convergence and higher returns compared to existing online methods (ArCHer and RAGEN) across iterations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered m-6">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3">Analysis and Ablation Study</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/ablation_win_rates.png" alt="Ablation Win Rates" width="60%" />
+                <p>Ablation study on win rates showing the contribution of different components of ARIA. Both reward decay and reward aggregation contribute to performance improvements.
+                </p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/ablation_loss.png" alt="Ablation Loss" width="60%" />
+                <p>Training loss curves under different ablation settings, demonstrating that ARIA accelerates loss reduction and enables faster policy updates through semantic-level reward aggregation.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/generalization_results.png" alt="Generalization" width="70%" />
+                <p>Generalization results on different models (Qwen2.5-7B and Qwen2.5-1.5B) showing consistent improvements, demonstrating that ARIA is model-agnostic.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEORETICAL ANALYSIS SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Theoretical Analysis</h2>
+          <div class="content has-text-justified">
+            <p>
+              We provide theoretical analysis showing that intention clustering-based aggregation reduces the variance of gradient descent while maintaining a small bound of bias, thus improving training stability and efficiency.
+            </p>
+            <p>
+              <strong>Variance Reduction:</strong> By replacing original advantages A with cluster-averaged advantages Ã, we remove the intra-cluster variance E[Var(A | C)], lowering the total variance of the policy gradient estimate: Var(Ã) ≤ Var(A).
+            </p>
+            <p>
+              <strong>Bounded Bias:</strong> Through ε-bisimulation analysis, we show that the bias introduced by reward aggregation is bounded: |E[∇θ log πθ(a | h)(A(h, a) − Ã(h, a))]| ≤ O(ε), where actions within each cluster are ε-bisimilar.
+            </p>
+            <p>
+              <strong>Convergence Improvement:</strong> The variance reduction leads to faster convergence with fewer samples: ∥ĝ − g∥₂ = O(√σ/N), where σ is reduced through clustering.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered m-6">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3">Case Studies</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-left">
+                <h4><strong>Twenty Questions Example</strong></h4>
+                <pre><code>Actor: Is it a living thing? Oracle: Yes.
+Actor: Is it a mammal? Oracle: Yes.
+Actor: Is it a human? Oracle: No.
+Actor: Is it a carnivore? Oracle: No.
+Actor: Is it a cow? Oracle: Yes.</code></pre>
+                <p style="text-align: center;">Agent successfully identifies the target object within 5 turns using strategic questioning.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-left">
+                <h4><strong>Bargaining Example</strong></h4>
+                <pre><code>Alice: I'm starting strong, let's start with 60-40 split!
+Bob: I propose a more balanced split, considering the inflation 
+     effect on your side. What about a 55-45 split?
+Alice: I'm willing to compromise, but I want a better share. 
+       I propose 70-30 Split!
+Bob: Alice, consider that with each round, inflation affects 
+     your gains more than mine. This 60-40 split is actually 
+     more favorable to you...</code></pre>
+                <p style="text-align: center;">Agent demonstrates strategic negotiation skills considering game dynamics and inflation effects.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <h4><strong>Clustering Visualization</strong></h4>
+                <img src="static/images/clustering_tree.png" alt="Clustering Tree" width="80%" />
+                <p>Hierarchical clustering results showing semantic grouping of actions in bargaining scenarios into meaningful intention categories like "Offer", "Decision", "Compromise", etc.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIBTEX SECTION -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3 has-text-centered">BibTeX</h2>
+      <pre><code>@article{yang2024aria,
+  title={ARIA: Training Language Agents with Intention-Driven Reward Aggregation},
+  author={Yang, Ruihan and Zhang, Yikai and Chen, Aili and Wang, Xintao and Yuan, Siyu and Chen, Jiangjie and Yang, Deqing and Xiao, Yanghua},
+  journal={arXiv preprint},
+  year={2024}
+}</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <div class="section" id="org-banners" style="display:flex">
+      <a href="https://www.fudan.edu.cn/en/" target="_blank" rel="external">
+        <img class="center-block org-banner" src="static/images/fdu.png" alt="Fudan University">
+      </a>
+      <a href="https://www.bytedance.com/" target="blank" class="ext-link">
+        <img class="center-block org-banner" src="static/images/bytedance.png" alt="Bytedance">
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://mathvista.github.io/">MathVista</a>, licensed under a <a
+              rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>], ['\\(', '\\)']],
+        displayMath: [['$', '$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+
+  <style>
+    pre {
+        max-height: 400px; 
+        overflow-x: auto; 
+        overflow-y: auto;
+        background-color: #f0f0f0; 
+        padding: 10px;
+        border: 1px solid #ccc; 
+        text-align: left;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.1); }
+    }
+    
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .floating-dot {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .pulsing-dot {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    .rotating-logo {
+      animation: rotate 20s linear infinite;
+      transform-origin: 100px 100px;
+    }
+    
+    .floating-dot:nth-child(2) { animation-delay: 0.5s; }
+    .floating-dot:nth-child(3) { animation-delay: 1s; }
+    .floating-dot:nth-child(4) { animation-delay: 1.5s; }
+    .floating-dot:nth-child(5) { animation-delay: 2s; }
+</style>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://selfgoal-agent.github.io/">
+              <b>SELFGOAL🔥🔥🔥</b>
+            </a>
+            <a class="navbar-item" href="https://time-arena.github.io/">
+              <b>TimeArena🔥🔥🔥</b>
+            </a>
+            <a class="navbar-item" href="https://auction-arena.github.io/">
+              <b>AuctionArena</b>
             </a>
           </div>
         </div>
