@@ -261,22 +261,58 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Reward Aggregation</h2>
           <div class="content has-text-justified">
+
+            <h4>Semantic Projection and Reward Aggregation</h4>
+        
+            
+        
             <p>
-              Let $c(\tau) = \{c_k(a_1), c_k(o_1), \ldots, c_k(a_T), c_k(o_T)\}$ denote the labeled sequence of trajectory $\tau$ and $R$ denote the reward. First, we have the return at $t$ step as discounted reward with coefficient $\gamma$:
+        
+                Our approach leverages <strong>semantic projection</strong> to map different trajectories into clustered representations, enabling effective reward aggregation across semantically similar experiences.
+        
             </p>
+        
+            
+        
+            <p>
+        
+                <strong>Semantic Clustering:</strong> Each action and observation is embedded and clustered, producing cluster labels \(c_k(a_t)\) and \(c_k(o_t)\). This creates a clustered trajectory representation \(\tilde{h}_t = \{c_k(a_1), c_k(o_1), \ldots, c_k(a_{t-1}), c_k(o_{t-1})\}\).
+        
+            </p>
+        
+            
+        
+            <p>
+        
+                <strong>Reward Aggregation:</strong> For each clustered state-action pair \((\tilde{h}_t, \tilde{a}_t)\), we aggregate rewards from all trajectories sharing this semantic pattern:
+        
+            </p>
+        
+            
+        
             <div class="has-text-centered">
-              $$R(h_t, a_t) = \gamma^{T-t} R$$
+        
+                $$\tilde{R}(\tilde{h}_t, \tilde{a}_t) = \frac{1}{|\mathcal{D}_{\tilde{h}_t, \tilde{a}_t}|} \sum_{\tau \in \mathcal{D}_{\tilde{h}_t, \tilde{a}_t}} \gamma^{T-t} R$$
+        
             </div>
+        
+            
+        
             <p>
-              Then, we calculate the aggregated return as:
+        
+                where \(\mathcal{D}_{\tilde{h}_t, \tilde{a}_t}\) contains all trajectories with the same clustered prefix. This semantic-based aggregation pools reward signals from similar experiences, providing more robust value estimates and improving sample efficiency.
+        
             </p>
-            <div class="has-text-centered">
-              $$\tilde{R}(\tilde{h}_t, \tilde{a}_t) = \frac{1}{|\mathcal{D}_{\tilde{h}_t, \tilde{a}_t}|} \sum_{\tau \in \mathcal{D}_{\tilde{h}_t, \tilde{a}_t}} R(\tilde{h}_t, \tilde{a}_t)$$
-            </div>
+        
+            
+        
             <p>
-              where $\mathcal{D}_{\tilde{h}_t, \tilde{a}_t}$ denotes all trajectories with $(\tilde{h}_t, \tilde{a}_t)$ as prefix in the intention sequences. Finally, we assign $\tilde{R}(\tilde{h}_t, \tilde{a}_t)$ to $(h_t, a_t)$ and use it as advantage $\tilde{A}(h_t,a_t)$ for optimization.
+        
+                The aggregated reward \(\tilde{R}(\tilde{h}_t, \tilde{a}_t)\) is then assigned back to the original state-action pair \((h_t, a_t)\) as advantage \(\tilde{A}(h_t, a_t)\) for policy optimization.
+        
             </p>
-          </div>
+        
+        </div>
         </div>
       </div>
 
