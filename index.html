@@ -227,11 +227,6 @@
     </div>
   </section>
 
-  <section class="hero is-light is-small">
-    <div class="hero-body has-text-centered">
-      <h1 class="title is-1 mathvista">Introduction</h1>
-    </div>
-  </section>
   
   <section class="section">
     <div class="container" style="margin-bottom: 2vh;">
@@ -265,35 +260,17 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Reward Aggregation</h2>
-<div class="content has-text-justified">
+      <div class="content has-text-justified">
 
-    <h4>Semantic Projection and Reward Aggregation</h4>
-
-    
-
-    <p>
-
-        Our approach leverages <strong>semantic projection</strong> to map different trajectories into clustered representations, enabling effective reward aggregation across semantically similar experiences.
-
-    </p>
-
-    
-
-    <p>
-
-        <strong>Semantic Clustering:</strong> Each action and observation is embedded and clustered, producing cluster labels \(c_k(a_t)\) and \(c_k(o_t)\). This creates a clustered trajectory representation \(\tilde{h}_t = \{c_k(a_1), c_k(o_1), \ldots, c_k(a_{t-1}), c_k(o_{t-1})\}\).
-
-    </p>
-
-    
-
-    <p>
-
-        <strong>Reward Aggregation:</strong> For each clustered state-action pair \((\tilde{h}_t, \tilde{a}_t)\), we aggregate rewards from all trajectories sharing this semantic pattern:
-
-    </p>
-
-    
+        <p>
+            Our approach leverages <strong>semantic projection</strong> to map different trajectories into clustered representations, enabling effective reward aggregation across semantically similar experiences.
+        </p>
+        <p>
+            <strong>Semantic Clustering:</strong> Each action and observation is embedded and clustered, producing cluster labels \(c_k(a_t)\) and \(c_k(o_t)\). This creates a clustered trajectory representation \(\tilde{h}_t = \{c_k(a_1), c_k(o_1), \ldots, c_k(a_{t-1}), c_k(o_{t-1})\}\).
+        </p>
+        <p>
+            <strong>Reward Aggregation:</strong> For each clustered state-action pair \((\tilde{h}_t, \tilde{a}_t)\), we aggregate rewards from all trajectories sharing this semantic pattern:
+        </p>
 
     <div class="has-text-centered">
 
@@ -376,6 +353,7 @@
         <div class="column is-full has-text-centered content">
           <h2 class="title is-3">Main Results</h2>
           <div id="results-carousel" class="carousel results-carousel">
+        
             <div class="box m-5">
               <div class="content has-text-centered">
                 <img src="static/images/main_results_adversarial.png" alt="Main Results Adversarial" height="12%" />
