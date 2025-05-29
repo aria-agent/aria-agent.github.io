@@ -216,12 +216,6 @@
       </div>
     </div>
   </section>
-  
-  <section class="hero is-light is-small">
-    <div class="hero-body has-text-centered">
-      <h1 class="title is-1 mathvista">Introduction</h1>
-    </div>
-  </section>
 
   <section class="hero teaser">
     <div class="container is-max-desktop">
@@ -233,6 +227,12 @@
     </div>
   </section>
 
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 mathvista">Introduction</h1>
+    </div>
+  </section>
+  
   <section class="section">
     <div class="container" style="margin-bottom: 2vh;">
       <div class="columns is-centered has-text-centered">
@@ -265,59 +265,59 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Reward Aggregation</h2>
-          <div class="content has-text-justified">
+<div class="content has-text-justified">
 
-            <h4>Semantic Projection and Reward Aggregation</h4>
-        
-            
-        
-            <p>
-        
-                Our approach leverages <strong>semantic projection</strong> to map different trajectories into clustered representations, enabling effective reward aggregation across semantically similar experiences.
-        
-            </p>
-        
-            
-        
-            <p>
-        
-                <strong>Semantic Clustering:</strong> Each action and observation is embedded and clustered, producing cluster labels \(c_k(a_t)\) and \(c_k(o_t)\). This creates a clustered trajectory representation \(\tilde{h}_t = \{c_k(a_1), c_k(o_1), \ldots, c_k(a_{t-1}), c_k(o_{t-1})\}\).
-        
-            </p>
-        
-            
-        
-            <p>
-        
-                <strong>Reward Aggregation:</strong> For each clustered state-action pair \((\tilde{h}_t, \tilde{a}_t)\), we aggregate rewards from all trajectories sharing this semantic pattern:
-        
-            </p>
-        
-            
-        
-            <div class="has-text-centered">
-        
-                $$\tilde{R}(\tilde{h}_t, \tilde{a}_t) = \frac{1}{|\mathcal{D}_{\tilde{h}_t, \tilde{a}_t}|} \sum_{\tau \in \mathcal{D}_{\tilde{h}_t, \tilde{a}_t}} \gamma^{T-t} R$$
-        
-            </div>
-        
-            
-        
-            <p>
-        
-                where \(\mathcal{D}_{\tilde{h}_t, \tilde{a}_t}\) contains all trajectories with the same clustered prefix. This semantic-based aggregation pools reward signals from similar experiences, providing more robust value estimates and improving sample efficiency.
-        
-            </p>
-        
-            
-        
-            <p>
-        
-                The aggregated reward \(\tilde{R}(\tilde{h}_t, \tilde{a}_t)\) is then assigned back to the original state-action pair \((h_t, a_t)\) as advantage \(\tilde{A}(h_t, a_t)\) for policy optimization.
-        
-            </p>
-        
-        </div>
+    <h4>Semantic Projection and Reward Aggregation</h4>
+
+    
+
+    <p>
+
+        Our approach leverages <strong>semantic projection</strong> to map different trajectories into clustered representations, enabling effective reward aggregation across semantically similar experiences.
+
+    </p>
+
+    
+
+    <p>
+
+        <strong>Semantic Clustering:</strong> Each action and observation is embedded and clustered, producing cluster labels \(c_k(a_t)\) and \(c_k(o_t)\). This creates a clustered trajectory representation \(\tilde{h}_t = \{c_k(a_1), c_k(o_1), \ldots, c_k(a_{t-1}), c_k(o_{t-1})\}\).
+
+    </p>
+
+    
+
+    <p>
+
+        <strong>Reward Aggregation:</strong> For each clustered state-action pair \((\tilde{h}_t, \tilde{a}_t)\), we aggregate rewards from all trajectories sharing this semantic pattern:
+
+    </p>
+
+    
+
+    <div class="has-text-centered">
+
+        $$\tilde{R}(\tilde{h}_t, \tilde{a}_t) = \frac{1}{|\mathcal{D}_{\tilde{h}_t, \tilde{a}_t}|} \sum_{\tau \in \mathcal{D}_{\tilde{h}_t, \tilde{a}_t}} \gamma^{T-t} R$$
+
+    </div>
+
+    
+
+    <p>
+
+        where \(\mathcal{D}_{\tilde{h}_t, \tilde{a}_t}\) contains all trajectories with the same clustered prefix. This semantic-based aggregation pools reward signals from similar experiences, providing more robust value estimates and improving sample efficiency.
+
+    </p>
+
+    
+
+    <p>
+
+        The aggregated reward \(\tilde{R}(\tilde{h}_t, \tilde{a}_t)\) is then assigned back to the original state-action pair \((h_t, a_t)\) as advantage \(\tilde{A}(h_t, a_t)\) for policy optimization.
+
+    </p>
+
+</div>
         </div>
       </div>
 
