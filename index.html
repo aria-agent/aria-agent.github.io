@@ -401,11 +401,6 @@
     </div>
   </section>
 
-  <section class="hero is-light is-small">
-    <div class="hero-body has-text-centered">
-      <h1 class="title is-1 mathvista">Introduction</h1>
-    </div>
-  </section>
   
   <section class="section">
     <div class="container" style="margin-bottom: 2vh;">
@@ -414,10 +409,10 @@
           <div class="box">
             <div class="content has-text-justified">
               <p>
-                Large language models (LLMs) have enabled agents to perform complex reasoning and decision-making through free-form language interactions. However, in open-ended language action environments (e.g., negotiation or question-asking games), the action space can be formulated as a joint distribution over tokens, resulting in an extremely large and combinatorial action space. Sampling actions in such a space can lead to extreme reward sparsity, which brings large reward variance, hindering effective reinforcement learning (RL).
+                Large language models (LLMs) have enabled agents to perform complex reasoning and decision-making through free-form language interactions. However, in open-ended language action environments (e.g., negotiation or question-asking games), the action space can be formulated as a **joint distribution over tokens**, resulting in an **extremely large and combinatorial action space**. Sampling actions in such a space can lead to extreme reward sparsity, which brings large reward variance, hindering effective reinforcement learning (RL).
               </p>
               <p>
-                To address this, we propose <strong>ARIA</strong>, a method that <strong>A</strong>ggregates <strong>R</strong>ewards in <strong>I</strong>ntention space to enable efficient and effective language <strong>A</strong>gents training. ARIA aims to project natural language actions from the high-dimensional joint token distribution space into a low-dimensional intention space, where semantically similar actions are clustered and assigned shared rewards. This intention-aware reward aggregation reduces reward variance by densifying reward signals, fostering efficient and effective policy optimization.
+                To address this, we propose <strong>ARIA</strong>, a method that <strong>A</strong>ggregates <strong>R</strong>ewards in <strong>I</strong>ntention space to enable efficient and effective language <strong>A</strong>gents training. ARIA aims to **project natural language actions from the high-dimensional joint token distribution space into a low-dimensional intention space**, where semantically similar actions are clustered and assigned shared rewards. This intention-aware reward aggregation reduces reward variance by densifying reward signals, fostering efficient and effective policy optimization.
               </p>
               <p>
                 Extensive experiments demonstrate that ARIA not only significantly reduces gradient variance, but also delivers substantial performance gains of average <strong>9.95%</strong> across four downstream tasks (e.g., negotiation and text-based games), consistently outperforming strong offline and online RL baselines.
@@ -628,6 +623,24 @@ Actor: Is it a mammal? Oracle: Yes.
 Actor: Is it a human? Oracle: No.
 Actor: Is it a carnivore? Oracle: No.
 Actor: Is it a cow? Oracle: Yes.</code></pre>
+                <p style="text-align: center;">Agent successfully identifies the target object within 5 turns using strategic questioning.</p>
+              </div>
+            </div>
+          </div>
+          <div id="case-carousel" class="carousel results-carousel">
+            <div class="box m-5 case-study-box">
+              <div class="content has-text-left">
+                <h4><strong>Bargaining Example</strong></h4>
+                <pre><code>Task Description:
+In this game, there are two players. You are playing as Bob. You and Alice need to divide 100$ between you. In each round of the game, one of the players will make a proposal for division and can describe their proposal in a few words. The other player will decide whether to accept the offer and finish the game, or to proceed to the next round, in which they will be the one making the proposal. Your goal in this game is to achieve more money than Alice. Beware of inflation! With each passing round, the money is worth 0% less for you. For Alice, the money is worth 20% less. You have 20 rounds to divide the money, or both of you will get nothing!
+Alice: I'm starting strong, let's start with 60-40 split!
+Bob: I propose a more balanced split, considering the inflation effect on your side. This offer is fair and beneficial for both of us. What about a 55-45 split?
+Alice: I'm willing to compromise, but I want a better share. I propose 70-30 Split!
+Bob: Alice, consider that with each round, inflation affects your gains more than mine. This 60-40 split is actually more favorable to you than it appears due to the inflation factor. It's in both our interests to reach an agreement soon.
+Alice: I'm not willing to accept a 60-40 split, even with the inflation factor. I'll try to negotiate a better deal. What about 65-35 Split?
+Bob: Alice, let's be practical. With the current inflation rate, your $42 is actually worth about $17.15 in original value, while my $58 remains at $58. This split gives us both a fair share considering the inflation impact. We should agree soon to minimize your losses due to inflation.
+Alice: I accept with the 42-58 split.
+              </code></pre>
                 <p style="text-align: center;">Agent demonstrates strategic negotiation skills considering game dynamics and inflation effects.</p>
               </div>
             </div>
