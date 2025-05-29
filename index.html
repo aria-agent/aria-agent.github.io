@@ -42,14 +42,21 @@
   <script src="./static/js/question_card.js"></script>
 
   <style>
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+    }
+    
     pre {
         max-height: 400px; 
         overflow-x: auto; 
         overflow-y: auto;
-        background-color: #f0f0f0; 
-        padding: 10px;
-        border: 1px solid #ccc; 
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 15px;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
         text-align: left;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
     
     @keyframes float {
@@ -76,6 +83,181 @@
     .floating-dot:nth-child(5) { animation-delay: 2s; }
     .floating-dot:nth-child(6) { animation-delay: 2.5s; }
     .floating-dot:nth-child(7) { animation-delay: 3s; }
+    
+    /* Enhanced styling */
+    .hero {
+      background: transparent;
+    }
+    
+    .hero.is-light {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero.is-light::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: rotate 30s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .hero.is-light .title {
+      color: white !important;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .section {
+      background: transparent;
+      padding: 3rem 1.5rem;
+    }
+    
+    .box {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+    
+    .publication-links .button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .publication-links .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+    
+    .author-block a {
+      color: #667eea;
+      transition: color 0.3s ease;
+    }
+    
+    .author-block a:hover {
+      color: #764ba2;
+      text-decoration: underline;
+    }
+    
+    .title.is-3 {
+      color: #2c3e50;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    
+    .title.is-3::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 2px;
+    }
+    
+    .content img {
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    
+    .content p {
+      line-height: 1.8;
+      color: #4a5568;
+    }
+    
+    /* Method section styling */
+    .method-box {
+      background: linear-gradient(135deg, #f6f8fb 0%, #e9ecef 100%);
+      border-left: 4px solid #667eea;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .method-box h4 {
+      color: #667eea;
+      margin-bottom: 1rem;
+    }
+    
+    /* Footer styling */
+    .footer {
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      color: white;
+      padding: 2rem 0;
+    }
+    
+    .footer a {
+      color: #667eea;
+    }
+    
+    .footer a:hover {
+      color: #764ba2;
+    }
+    
+    /* BibTeX section */
+    #BibTeX pre {
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+    
+    /* Case study styling */
+    .case-study-box {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .case-study-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    /* Result cards enhancement */
+    .results-carousel .box {
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .results-carousel .box p {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: rgba(102, 126, 234, 0.05);
+      border-radius: 8px;
+      border-left: 3px solid #667eea;
+    }
 </style>
 </head>
 
@@ -220,28 +402,37 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="content has-text-centered">
-        <img src="static/images/aria_overview.png" alt="ARIA Overview" width="100%" />
-        <p>Overview of ARIA. ARIA first lets agents interact to collect trajectories, then performs semantic projection and aggregates rewards in the intention space, and finally updates the policy using the aggregated rewards.
-        </p>
+        <div class="box">
+          <img src="static/images/aria_overview.png" alt="ARIA Overview" width="100%" />
+          <p style="margin-top: 1rem; font-style: italic; color: #4a5568;">Overview of ARIA. ARIA first lets agents interact to collect trajectories, then performs semantic projection and aggregates rewards in the intention space, and finally updates the policy using the aggregated rewards.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 mathvista">Introduction</h1>
+    </div>
+  </section>
   
   <section class="section">
     <div class="container" style="margin-bottom: 2vh;">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <div class="content has-text-justified">
-            <p>
-              Large language models (LLMs) have enabled agents to perform complex reasoning and decision-making through free-form language interactions. However, in open-ended language action environments (e.g., negotiation or question-asking games), the action space can be formulated as a joint distribution over tokens, resulting in an extremely large and combinatorial action space. Sampling actions in such a space can lead to extreme reward sparsity, which brings large reward variance, hindering effective reinforcement learning (RL).
-            </p>
-            <p>
-              To address this, we propose ARIA, a method that Aggregates Rewards in Intention space to enable efficient and effective language Agents training. ARIA aims to project natural language actions from the high-dimensional joint token distribution space into a low-dimensional intention space, where semantically similar actions are clustered and assigned shared rewards. This intention-aware reward aggregation reduces reward variance by densifying reward signals, fostering efficient and effective policy optimization.
-            </p>
-            <p>
-              Extensive experiments demonstrate that ARIA not only significantly reduces gradient variance, but also delivers substantial performance gains of average 9.95% across four downstream tasks (e.g., negotiation and text-based games), consistently outperforming strong offline and online RL baselines.
-            </p>
+          <div class="box">
+            <div class="content has-text-justified">
+              <p>
+                Large language models (LLMs) have enabled agents to perform complex reasoning and decision-making through free-form language interactions. However, in open-ended language action environments (e.g., negotiation or question-asking games), the action space can be formulated as a joint distribution over tokens, resulting in an extremely large and combinatorial action space. Sampling actions in such a space can lead to extreme reward sparsity, which brings large reward variance, hindering effective reinforcement learning (RL).
+              </p>
+              <p>
+                To address this, we propose <strong>ARIA</strong>, a method that <strong>A</strong>ggregates <strong>R</strong>ewards in <strong>I</strong>ntention space to enable efficient and effective language <strong>A</strong>gents training. ARIA aims to project natural language actions from the high-dimensional joint token distribution space into a low-dimensional intention space, where semantically similar actions are clustered and assigned shared rewards. This intention-aware reward aggregation reduces reward variance by densifying reward signals, fostering efficient and effective policy optimization.
+              </p>
+              <p>
+                Extensive experiments demonstrate that ARIA not only significantly reduces gradient variance, but also delivers substantial performance gains of average <strong>9.95%</strong> across four downstream tasks (e.g., negotiation and text-based games), consistently outperforming strong offline and online RL baselines.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -260,63 +451,58 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Reward Aggregation</h2>
-      <div class="content has-text-justified">
+          <div class="box">
+            <div class="content has-text-justified">
+              <div class="method-box">
+                <h4>Semantic Projection and Reward Aggregation</h4>
+                <p>
+                    Our approach leverages <strong>semantic projection</strong> to map different trajectories into clustered representations, enabling effective reward aggregation across semantically similar experiences.
+                </p>
+                <p>
+                    <strong>Semantic Clustering:</strong> Each action and observation is embedded and clustered, producing cluster labels \(c_k(a_t)\) and \(c_k(o_t)\). This creates a clustered trajectory representation \(\tilde{h}_t = \{c_k(a_1), c_k(o_1), \ldots, c_k(a_{t-1}), c_k(o_{t-1})\}\).
+                </p>
+                <p>
+                    <strong>Reward Aggregation:</strong> For each clustered state-action pair \((\tilde{h}_t, \tilde{a}_t)\), we aggregate rewards from all trajectories sharing this semantic pattern:
+                </p>
 
-        <p>
-            Our approach leverages <strong>semantic projection</strong> to map different trajectories into clustered representations, enabling effective reward aggregation across semantically similar experiences.
-        </p>
-        <p>
-            <strong>Semantic Clustering:</strong> Each action and observation is embedded and clustered, producing cluster labels \(c_k(a_t)\) and \(c_k(o_t)\). This creates a clustered trajectory representation \(\tilde{h}_t = \{c_k(a_1), c_k(o_1), \ldots, c_k(a_{t-1}), c_k(o_{t-1})\}\).
-        </p>
-        <p>
-            <strong>Reward Aggregation:</strong> For each clustered state-action pair \((\tilde{h}_t, \tilde{a}_t)\), we aggregate rewards from all trajectories sharing this semantic pattern:
-        </p>
+                <div class="has-text-centered" style="padding: 1.5rem; background: rgba(102, 126, 234, 0.05); border-radius: 8px; margin: 1rem 0;">
+                    $$\tilde{R}(\tilde{h}_t, \tilde{a}_t) = \frac{1}{|\mathcal{D}_{\tilde{h}_t, \tilde{a}_t}|} \sum_{\tau \in \mathcal{D}_{\tilde{h}_t, \tilde{a}_t}} \gamma^{T-t} R$$
+                </div>
 
-    <div class="has-text-centered">
-
-        $$\tilde{R}(\tilde{h}_t, \tilde{a}_t) = \frac{1}{|\mathcal{D}_{\tilde{h}_t, \tilde{a}_t}|} \sum_{\tau \in \mathcal{D}_{\tilde{h}_t, \tilde{a}_t}} \gamma^{T-t} R$$
-
-    </div>
-
-    
-
-    <p>
-
-        where \(\mathcal{D}_{\tilde{h}_t, \tilde{a}_t}\) contains all trajectories with the same clustered prefix. This semantic-based aggregation pools reward signals from similar experiences, providing more robust value estimates and improving sample efficiency.
-
-    </p>
-
-    
-
-    <p>
-
-        The aggregated reward \(\tilde{R}(\tilde{h}_t, \tilde{a}_t)\) is then assigned back to the original state-action pair \((h_t, a_t)\) as advantage \(\tilde{A}(h_t, a_t)\) for policy optimization.
-
-    </p>
-
-</div>
+                <p>
+                    where \(\mathcal{D}_{\tilde{h}_t, \tilde{a}_t}\) contains all trajectories with the same clustered prefix. This semantic-based aggregation pools reward signals from similar experiences, providing more robust value estimates and improving sample efficiency.
+                </p>
+                
+                <p>
+                    The aggregated reward \(\tilde{R}(\tilde{h}_t, \tilde{a}_t)\) is then assigned back to the original state-action pair \((h_t, a_t)\) as advantage \(\tilde{A}(h_t, a_t)\) for policy optimization.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Reward-Oriented Granularity Selection For Clustering</h2>
-          <div class="content has-text-justified">
-            <p>
-              Traditional clustering metrics tend to favor overly coarse groupings due to high similarity among actions, overlooking fine-grained distinctions critical for RL tasks. We propose a reward-oriented granularity selection mechanism that assesses whether further splitting clusters yields meaningful reward change.
-            </p>
-            <p>
-              <strong>SplitScore:</strong> Let $k \in [2, K]$ denote all possible granularity levels. We use SplitScore to select the optimal granularity $k^{*}$, defined as:
-            </p>
-            <div class="has-text-centered">
-              $$\text{SplitScore}(k) = \frac{\delta_k}{|\mathcal{D}|}$$
+          <div class="box">
+            <div class="content has-text-justified">
+              <p>
+                Traditional clustering metrics tend to favor overly coarse groupings due to high similarity among actions, overlooking fine-grained distinctions critical for RL tasks. We propose a reward-oriented granularity selection mechanism that assesses whether further splitting clusters yields meaningful reward change.
+              </p>
+              <p>
+                <strong>SplitScore:</strong> Let $k \in [2, K]$ denote all possible granularity levels. We use SplitScore to select the optimal granularity $k^{*}$, defined as:
+              </p>
+              <div class="has-text-centered" style="padding: 1.5rem; background: rgba(102, 126, 234, 0.05); border-radius: 8px; margin: 1rem 0;">
+                $$\text{SplitScore}(k) = \frac{\delta_k}{|\mathcal{D}|}$$
+              </div>
+              <p>
+                where $\delta_k = \left| \tilde{R}^{(k+1)}(h_t, a_t) - \tilde{R}^{(k)}(h_t, a_t) \right|$ represents the reward change when the number of clusters changes from $k$ to $k+1$, and $\mathcal{D}$ is the collection of all $(h_t, a_t)$ pairs.
+              </p>
+              <p>
+                <strong>Automatic Stopping Criterion:</strong> Given a threshold $\epsilon > 0$ and window size $\tau$, we stop splitting when $\text{SplitScore}(j) < \epsilon$ for all $j \in [k, k + \tau]$ as $k$ increases. The selected $k$ is then taken as $k^*$.
+              </p>
             </div>
-            <p>
-              where $\delta_k = \left| \tilde{R}^{(k+1)}(h_t, a_t) - \tilde{R}^{(k)}(h_t, a_t) \right|$ represents the reward change when the number of clusters changes from $k$ to $k+1$, and $\mathcal{D}$ is the collection of all $(h_t, a_t)$ pairs.
-            </p>
-            <p>
-              <strong>Automatic Stopping Criterion:</strong> Given a threshold $\epsilon > 0$ and window size $\tau$, we stop splitting when $\text{SplitScore}(j) < \epsilon$ for all $j \in [k, k + \tau]$ as $k$ increases. The selected $k$ is then taken as $k^*$.
-            </p>
           </div>
         </div>
       </div>
@@ -324,16 +510,18 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Offline REINFORCE with Aggregated Reward</h2>
-          <div class="content has-text-justified">
-            <p>
-              We use the offline REINFORCE algorithm to optimize the policy. Formally, let $\pi_\theta(a \mid s)$ denote the policy parameterized by $\theta$ and assign the aggregated reward $\tilde{R}^{(k)}(h_t,a_t)$ to $\tilde{A}(h_t,a_t)$. ARIA optimizes the model by maximizing the following objective:
-            </p>
-            <div class="has-text-centered">
-              $$J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^T  \log \pi_\theta(a_t \mid h_t) \cdot \tilde{A}(h_t,a_t) \right]$$
+          <div class="box">
+            <div class="content has-text-justified">
+              <p>
+                We use the offline REINFORCE algorithm to optimize the policy. Formally, let $\pi_\theta(a \mid s)$ denote the policy parameterized by $\theta$ and assign the aggregated reward $\tilde{R}^{(k)}(h_t,a_t)$ to $\tilde{A}(h_t,a_t)$. ARIA optimizes the model by maximizing the following objective:
+              </p>
+              <div class="has-text-centered" style="padding: 1.5rem; background: rgba(102, 126, 234, 0.05); border-radius: 8px; margin: 1rem 0;">
+                $$J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^T  \log \pi_\theta(a_t \mid h_t) \cdot \tilde{A}(h_t,a_t) \right]$$
+              </div>
+              <p>
+                This objective leverages the variance-reduced advantages obtained through intention-aware reward aggregation, enabling more stable and efficient policy updates compared to standard REINFORCE with sparse rewards.
+              </p>
             </div>
-            <p>
-              This objective leverages the variance-reduced advantages obtained through intention-aware reward aggregation, enabling more stable and efficient policy updates compared to standard REINFORCE with sparse rewards.
-            </p>
           </div>
         </div>
       </div>
@@ -366,12 +554,13 @@
                 <img src="static/images/main_results_single.png" alt="Main Results Single" width="45%" />
                 <p>
                   Main results on single-agent games. ARIA outperforms all baselines by an average of 9.82% on Twenty Questions and Guess My City tasks, demonstrating its effectiveness across different task types.
+                </p>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
                 <img src="static/images/online_results.png" alt="Online Results" width="72%" />
-                <p>Online ARIA results showing faster convergence and higher returns compared to existing online methods (ArCHer and RAGEN) across iterations.</p>
+                <p><strong>Online ARIA extends our method to dynamic learning scenarios.</strong> We first perform reward aggregation on pre-collected trajectories to initialize a reward model (RM) using Llama-3.1-8B-Instruct. The policy then generates new samples scored by the RM for policy updates, while the RM itself is periodically updated with fresh data, creating a co-evolving system. This online adaptation shows faster convergence and achieves higher returns compared to existing online methods (ArCHer and RAGEN) across iterations, demonstrating ARIA's effectiveness in both offline and online settings.</p>
               </div>
             </div>
           </div>
@@ -381,7 +570,7 @@
       <div class="columns is-centered m-6">
         <div class="column is-full has-text-centered content">
           <h2 class="title is-3">Analysis</h2>
-          <div id="results-carousel" class="carousel results-carousel">
+          <div id="analysis-carousel" class="carousel results-carousel">
             <div class="box m-5">
               <div class="content has-text-centered">
                 <img src="static/images/reward_variance.png" alt="Reward Aggregation Significantly Reduces Reward Variance" width="78%" />
@@ -404,6 +593,7 @@
           </div>
         </div>
       </div>
+    </div>
   </section>
 
   <!-- THEORETICAL ANALYSIS SECTION -->
@@ -412,19 +602,21 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Theoretical Analysis</h2>
-          <div class="content has-text-justified">
-            <p>
-              We provide theoretical analysis showing that intention clustering-based aggregation reduces the variance of gradient descent while maintaining a small bound of bias, thus improving training stability and efficiency.
-            </p>
-            <p>
-              <strong>Variance Reduction:</strong> By replacing original advantages $A$ with cluster-averaged advantages $\tilde{A}$, we remove the intra-cluster variance $\mathbb{E}[\text{Var}(A | C)]$, lowering the total variance of the policy gradient estimate: $\text{Var}(\tilde{A}) \leq \text{Var}(A)$.
-            </p>
-            <p>
-              <strong>Bounded Bias:</strong> Through $\epsilon$-bisimulation analysis, we show that the bias introduced by reward aggregation is bounded: $|\mathbb{E}[\nabla_\theta \log \pi_\theta(a | h)(A(h, a) - \tilde{A}(h, a))]| \leq O(\epsilon)$, where actions within each cluster are $\epsilon$-bisimilar.
-            </p>
-            <p>
-              <strong>Convergence Improvement:</strong> The variance reduction leads to faster convergence with fewer samples: $\|\hat{g} - g\|_2 = O(\sqrt{\sigma/N})$, where $\sigma$ is reduced through clustering.
-            </p>
+          <div class="box">
+            <div class="content has-text-justified">
+              <p>
+                We provide theoretical analysis showing that intention clustering-based aggregation reduces the variance of gradient descent while maintaining a small bound of bias, thus improving training stability and efficiency.
+              </p>
+              <p>
+                <strong>Variance Reduction:</strong> By replacing original advantages $A$ with cluster-averaged advantages $\tilde{A}$, we remove the intra-cluster variance $\mathbb{E}[\text{Var}(A | C)]$, lowering the total variance of the policy gradient estimate: $\text{Var}(\tilde{A}) \leq \text{Var}(A)$.
+              </p>
+              <p>
+                <strong>Bounded Bias:</strong> Through $\epsilon$-bisimulation analysis, we show that the bias introduced by reward aggregation is bounded: $|\mathbb{E}[\nabla_\theta \log \pi_\theta(a | h)(A(h, a) - \tilde{A}(h, a))]| \leq O(\epsilon)$, where actions within each cluster are $\epsilon$-bisimilar.
+              </p>
+              <p>
+                <strong>Convergence Improvement:</strong> The variance reduction leads to faster convergence with fewer samples: $\|\hat{g} - g\|_2 = O(\sqrt{\sigma/N})$, where $\sigma$ is reduced through clustering.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -437,8 +629,8 @@
       <div class="columns is-centered m-6">
         <div class="column is-full has-text-centered content">
           <h2 class="title is-3">Case Studies</h2>
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="box m-5">
+          <div id="case-carousel" class="carousel results-carousel">
+            <div class="box m-5 case-study-box">
               <div class="content has-text-left">
                 <h4><strong>Twenty Questions Example</strong></h4>
                 <pre><code>Actor: Is it a living thing? Oracle: Yes.
@@ -446,22 +638,6 @@ Actor: Is it a mammal? Oracle: Yes.
 Actor: Is it a human? Oracle: No.
 Actor: Is it a carnivore? Oracle: No.
 Actor: Is it a cow? Oracle: Yes.</code></pre>
-                <p style="text-align: center;">Agent successfully identifies the target object within 5 turns using strategic questioning.</p>
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-left">
-                <h4><strong>Bargaining Example</strong></h4>
-                <pre><code>Task Description:
-In this game, there are two players. You are playing as Bob. You and Alice need to divide 100$ between you. In each round of the game, one of the players will make a proposal for division and can describe their proposal in a few words. The other player will decide whether to accept the offer and finish the game, or to proceed to the next round, in which they will be the one making the proposal. Your goal in this game is to achieve more money than Alice. Beware of inflation! With each passing round, the money is worth 0% less for you. For Alice, the money is worth 20% less. You have 20 rounds to divide the money, or both of you will get nothing!
-Alice: I'm starting strong, let's start with 60-40 split!
-Bob: I propose a more balanced split, considering the inflation effect on your side. This offer is fair and beneficial for both of us. What about a 55-45 split?
-Alice: I'm willing to compromise, but I want a better share. I propose 70-30 Split!
-Bob: Alice, consider that with each round, inflation affects your gains more than mine. This 60-40 split is actually more favorable to you than it appears due to the inflation factor. It's in both our interests to reach an agreement soon.
-Alice: I'm not willing to accept a 60-40 split, even with the inflation factor. I'll try to negotiate a better deal. What about 65-35 Split?
-Bob: Alice, let's be practical. With the current inflation rate, your $42 is actually worth about $17.15 in original value, while my $58 remains at $58. This split gives us both a fair share considering the inflation impact. We should agree soon to minimize your losses due to inflation.
-Alice: I accept with the 42-58 split.
-              </code></pre>
                 <p style="text-align: center;">Agent demonstrates strategic negotiation skills considering game dynamics and inflation effects.</p>
               </div>
             </div>
