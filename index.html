@@ -410,10 +410,10 @@
           <div class="box">
             <div class="content has-text-justified">
               <p>
-                Large language models (LLMs) have enabled agents to perform complex reasoning and decision-making through free-form language interactions. However, in open-ended language action environments (e.g., negotiation or question-asking games), the action space can be formulated as a **joint distribution over tokens**, resulting in an **extremely large and combinatorial action space**. Sampling actions in such a space can lead to extreme reward sparsity, which brings large reward variance, hindering effective reinforcement learning (RL).
+                Large language models (LLMs) have enabled agents to perform complex reasoning and decision-making through free-form language interactions. However, in open-ended language action environments (e.g., negotiation or question-asking games), the action space can be formulated as a <strong>joint distribution over tokens</strong>, resulting in an <strong>extremely large and combinatorial action space</strong>. Sampling actions in such a space can lead to extreme reward sparsity, which brings large reward variance, hindering effective reinforcement learning (RL).
               </p>
               <p>
-                To address this, we propose <strong>ARIA</strong>, a method that <strong>A</strong>ggregates <strong>R</strong>ewards in <strong>I</strong>ntention space to enable efficient and effective language <strong>A</strong>gents training. ARIA aims to **project natural language actions from the high-dimensional joint token distribution space into a low-dimensional intention space**, where semantically similar actions are clustered and assigned shared rewards. This intention-aware reward aggregation reduces reward variance by densifying reward signals, fostering efficient and effective policy optimization.
+                To address this, we propose <strong>ARIA</strong>, a method that <strong>A</strong>ggregates <strong>R</strong>ewards in <strong>I</strong>ntention space to enable efficient and effective language <strong>A</strong>gents training. ARIA aims to <strong>project natural language actions from the high-dimensional joint token distribution space into a low-dimensional intention space</strong>, where semantically similar actions are clustered and assigned shared rewards. This intention-aware reward aggregation reduces reward variance by densifying reward signals, fostering efficient and effective policy optimization.
               </p>
               <p>
                 Extensive experiments demonstrate that ARIA not only significantly reduces gradient variance, but also delivers substantial performance gains of average <strong>9.95%</strong> across four downstream tasks (e.g., negotiation and text-based games), consistently outperforming strong offline and online RL baselines.
@@ -627,8 +627,6 @@ Actor: Is it a cow? Oracle: Yes.</code></pre>
                 <p style="text-align: center;">Agent successfully identifies the target object within 5 turns using strategic questioning.</p>
               </div>
             </div>
-          </div>
-          <div id="case-carousel" class="carousel results-carousel">
             <div class="box m-5 case-study-box">
               <div class="content has-text-left">
                 <h4><strong>Bargaining Example</strong></h4>
